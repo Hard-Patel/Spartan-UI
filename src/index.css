@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* UI Component Showcase Design System
+   Dark-first modern design with vibrant gradients and smooth animations
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base dark theme colors */
+    --background: 224 15% 6%;
+    --foreground: 210 20% 98%;
+
+    --card: 224 15% 8%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 15% 8%;
+    --popover-foreground: 210 20% 98%;
+
+    /* Brand colors with vibrant gradients */
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 20% 98%;
+    --primary-glow: 262 83% 70%;
+
+    --secondary: 224 15% 12%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 224 15% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 224 15% 15%;
+    --input: 224 15% 12%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --brand-gradient: linear-gradient(135deg, hsl(262 83% 58%), hsl(252 83% 58%));
+    --subtle-gradient: linear-gradient(135deg, hsl(224 15% 8%), hsl(224 15% 12%));
+    --glow-shadow: 0 0 40px hsl(262 83% 58% / 0.3);
+    --elegant-shadow: 0 10px 30px -10px hsl(224 15% 4% / 0.5);
+    
+    /* Sidebar specific */
+    --sidebar-background: 224 15% 6%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 224 15% 12%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 224 15% 15%;
+    --sidebar-ring: 262 83% 58%;
+
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Light theme fallback (optional) */
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 224 15% 6%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 15% 6%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 15% 6%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 224 15% 6%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 224 15% 6%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 262 83% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Hero section styles */
+  .hero-gradient {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-border {
+    @apply relative;
+  }
+
+  .glow-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-[inherit] p-[1px];
+    background: var(--brand-gradient);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+
+  /* Component preview styles */
+  .component-card {
+    @apply relative overflow-hidden rounded-xl border bg-card transition-all duration-300;
+    background: var(--subtle-gradient);
+    box-shadow: var(--elegant-shadow);
+  }
+
+  .component-card:hover {
+    @apply border-primary/50;
+    box-shadow: var(--glow-shadow);
+    transform: translateY(-2px);
+  }
+
+  /* Code block styles */
+  .code-block {
+    @apply rounded-lg border bg-muted/30 p-4;
+    backdrop-filter: blur(8px);
+  }
+
+  /* Smooth animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--background), var(--background)) padding-box,
+                var(--brand-gradient) border-box;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px hsl(262 83% 58% / 0.5);
+  }
+  to {
+    text-shadow: 0 0 30px hsl(262 83% 58% / 0.8);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
