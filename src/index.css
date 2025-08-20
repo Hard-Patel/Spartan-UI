@@ -9,7 +9,70 @@
 
 @layer base {
   :root {
-    /* Base dark theme colors */
+    /* Base light theme colors (default) */
+    --background: 0 0% 100%;
+    --foreground: 224 15% 6%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 15% 6%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 15% 6%;
+
+    /* Brand colors */
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 20% 98%;
+    --primary-glow: 262 83% 70%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 224 15% 6%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 224 15% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --brand-gradient: linear-gradient(
+      135deg,
+      hsl(262 83% 58%),
+      hsl(252 83% 58%)
+    );
+    --subtle-gradient: linear-gradient(
+      135deg,
+      hsl(0 0% 100%),
+      hsl(210 40% 96%)
+    );
+    --glow-shadow: 0 0 40px hsl(262 83% 58% / 0.3);
+    --elegant-shadow: 0 10px 30px -10px hsl(224 15% 10% / 0.15);
+
+    /* Sidebar specific */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 224 15% 6%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 224 15% 6%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 262 83% 58%;
+
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Dark theme */
+  .dark {
     --background: 224 15% 6%;
     --foreground: 210 20% 98%;
 
@@ -43,11 +106,19 @@
     --radius: 0.75rem;
 
     /* Custom design tokens */
-    --brand-gradient: linear-gradient(135deg, hsl(262 83% 58%), hsl(252 83% 58%));
-    --subtle-gradient: linear-gradient(135deg, hsl(224 15% 8%), hsl(224 15% 12%));
+    --brand-gradient: linear-gradient(
+      135deg,
+      hsl(262 83% 58%),
+      hsl(252 83% 58%)
+    );
+    --subtle-gradient: linear-gradient(
+      135deg,
+      hsl(224 15% 8%),
+      hsl(224 15% 12%)
+    );
     --glow-shadow: 0 0 40px hsl(262 83% 58% / 0.3);
     --elegant-shadow: 0 10px 30px -10px hsl(224 15% 4% / 0.5);
-    
+
     /* Sidebar specific */
     --sidebar-background: 224 15% 6%;
     --sidebar-foreground: 210 20% 98%;
@@ -57,31 +128,6 @@
     --sidebar-accent-foreground: 210 20% 98%;
     --sidebar-border: 224 15% 15%;
     --sidebar-ring: 262 83% 58%;
-
-    /* Animation variables */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-
-  /* Light theme fallback (optional) */
-  .light {
-    --background: 0 0% 100%;
-    --foreground: 224 15% 6%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 15% 6%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 15% 6%;
-    --primary: 262 83% 58%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 224 15% 6%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 224 15% 6%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 262 83% 58%;
   }
 }
 
@@ -110,7 +156,7 @@
   }
 
   .glow-border::before {
-    content: '';
+    content: "";
     @apply absolute inset-0 rounded-[inherit] p-[1px];
     background: var(--brand-gradient);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -160,8 +206,9 @@
 
   .border-gradient {
     border: 1px solid transparent;
-    background: linear-gradient(var(--background), var(--background)) padding-box,
-                var(--brand-gradient) border-box;
+    background: linear-gradient(var(--background), var(--background))
+        padding-box,
+      var(--brand-gradient) border-box;
   }
 }
 
@@ -207,4 +254,10 @@
 
 .animate-marquee {
   animation: marquee 20s linear infinite;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+  animation: none;
 }

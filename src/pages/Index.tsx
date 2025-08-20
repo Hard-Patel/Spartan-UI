@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { ComponentPreview } from "@/components/showcase/ComponentPreview";
-import { Navigation } from "@/components/ui/navigation";
 import { Button } from "@/components/ui/button";
+import { Navigation } from "@/components/ui/navigation";
 import { getFeaturedComponents } from "@/data/components";
+import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const featuredComponents = getFeaturedComponents();
@@ -45,8 +45,9 @@ const Index = () => {
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                A curated collection of modern, animated, and responsive React components built with 
-                Tailwind CSS and Framer Motion. Copy, paste, and customize to your heart's content.
+                A curated collection of modern, animated, and responsive React
+                components built with Tailwind CSS and Framer Motion. Copy,
+                paste, and customize to your heart's content.
               </p>
             </motion.div>
 
@@ -56,7 +57,11 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex gap-4 justify-center"
             >
-              <Button asChild size="lg" className="bg-gradient-brand text-primary-foreground shadow-glow hover:scale-105 transition-transform duration-300">
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-brand text-primary-foreground shadow-glow hover:scale-105 transition-transform duration-300"
+              >
                 <Link to="/components">Browse Components</Link>
               </Button>
             </motion.div>
@@ -82,7 +87,8 @@ const Index = () => {
           >
             <h2 className="text-4xl font-bold mb-4">Featured Components</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Handpicked components that showcase the power and beauty of modern web interfaces
+              Handpicked components that showcase the power and beauty of modern
+              web interfaces
             </p>
           </motion.div>
 
@@ -94,17 +100,16 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className="group"
               >
                 <ComponentPreview component={component} showTabs={false} />
                 <div className="mt-4 space-y-2">
-                  <h3 className="text-xl font-semibold">{component.name}</h3>
-                  <p className="text-muted-foreground">{component.description}</p>
-                  <Link 
-                    to={`/components/${component.id}`}
-                    className="inline-flex items-center text-primary hover:text-primary-glow transition-colors"
-                  >
-                    View Details →
-                  </Link>
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors cursor-pointer">
+                    {component.name}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {component.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -117,7 +122,12 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mt-16"
           >
-            <Button asChild size="lg" variant="outline" className="border-gradient">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-gradient"
+            >
               <Link to="/components">View All Components</Link>
             </Button>
           </motion.div>

@@ -1,0 +1,25 @@
+import UserAvatarsCode from "../components/showcase/AnimatedUserAvatars.tsx?raw";
+import InteractiveCardCode from "../components/showcase/InteractiveCard.tsx?raw";
+import AnimatedButtonCode from "../components/showcase/AnimatedButton.tsx?raw";
+import HighlightedTextCode from "../components/showcase/HighlightedText.tsx?raw";
+import MarqueeCode from "../components/showcase/Marquee.tsx?raw";
+import AnimatedThemeToggleCode from "../components/showcase/AnimatedThemeToggler.tsx?raw";
+
+export const getComponentCode = (id: string) => {
+  switch (id) {
+    case "interactive-card":
+      return InteractiveCardCode;
+    case "animated-button":
+      return AnimatedButtonCode;
+    case "marquee":
+      return MarqueeCode;
+    case "highlighted-text":
+      return HighlightedTextCode;
+    case "user-avatars":
+      return UserAvatarsCode;
+    case "animated-theme-toggle":
+      return AnimatedThemeToggleCode;
+    default:
+      return "";
+  }
+};

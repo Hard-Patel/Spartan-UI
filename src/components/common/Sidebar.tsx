@@ -1,5 +1,5 @@
 import { getAllComponents } from "@/data/components";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useState } from "react";
 import { Search } from "../ui/search";
 import { useNavigate, useParams } from "react-router-dom";

@@ -1,5 +1,5 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useState } from "react";
 
 interface InteractiveCardProps {

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Button } from "@/components/ui/button";
@@ -10,6 +9,12 @@ import { ComponentData } from "@/data/components";
 import { useNavigate } from "react-router-dom";
 import { InteractiveCard } from "./InteractiveCard";
 import { UserAvatars } from "./AnimatedUserAvatars";
+import { getComponentCode } from "@/utils/common-functions";
+import { AnimatedButton } from "./AnimatedButton";
+import { motion } from "motion/react";
+import { Marquee } from "./Marquee";
+import { AnimatedThemeToggle } from "./AnimatedThemeToggler";
+import { HighlightedText } from "./HighlightedText";
 
 interface ComponentPreviewProps {
   component: ComponentData;
@@ -35,58 +40,61 @@ export const ComponentPreview = ({
     }
   };
 
+  const componentRawCode = getComponentCode(component.id);
+
   const PreviewComponent = () => {
     // Dynamic component rendering based on component ID
     switch (component.id) {
       case "animated-button":
         return (
           <div className="flex gap-4 flex-wrap justify-center">
-            <button className="px-6 py-3 bg-gradient-brand text-primary-foreground rounded-xl font-medium hover:scale-105 transition-transform duration-300 shadow-glow">
-              Primary Button
-            </button>
-            <button className="px-6 py-3 bg-secondary text-secondary-foreground border border-border rounded-xl font-medium hover:scale-105 transition-transform duration-300">
+            <AnimatedButton>Primary Button</AnimatedButton>
+            <AnimatedButton variant="secondary">
               Secondary Button
-            </button>
+            </AnimatedButton>
+            <AnimatedButton variant="outline">Outlined Button</AnimatedButton>
           </div>
         );
       case "marquee":
+        return <Marquee>Hello</Marquee>;
+
+      case "user-avatars":
         return (
           <UserAvatars
-            maxVisible={5}
             users={[
               {
                 id: 1,
-                name: "Alice",
+                name: "Awesome User",
                 image:
                   "https://cdn2.futurepedia.io/2024-11-26T18-51-51.356Z-MtXWJEI4O08DkXhcFo8z7VXOEe00XPWLb.webp?w=1920",
               },
               {
                 id: 2,
-                name: "Bob",
+                name: "Bob - The Builder",
                 image:
                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-QSTiahdKODtBSzMaIxXzFqzQCzLpBPqevQ&s",
               },
               {
                 id: 3,
-                name: "Charlie",
+                name: "Charlie Chaplin",
                 image:
                   "https://play-lh.googleusercontent.com/hJGHtbYSQ0nCnoEsK6AGojonjELeAh_Huxg361mVrPmzdwm8Ots-JzEH5488IS2nojI",
               },
               {
                 id: 4,
-                name: "Martin",
+                name: "Dumplin Dumb",
                 image:
                   "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/290306179/original/ff5c3aa639fb416c50d2f1d1ecfb543cd214b5ac/do-ai-avatar-photos-up-to-30-photos.jpg",
               },
               {
                 id: 5,
-                name: "Brook",
+                name: "Erikson",
                 image:
                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK5wpf2PIQ4tg7oYDIc4MT_bs0YZ3fnJ8-rn1Vnc_bfBhuLoylP6Et58QhnTRC_9dq5vU&usqp=CAU",
               },
               {
                 id: 6,
-                name: "Chalsie",
+                name: "Ferguson",
                 image:
                   "https://imgv3.fotor.com/images/gallery/generate-a-realistic-ai-avatar-of-a-formal-man-in-fotor.jpg",
               },
@@ -95,28 +103,30 @@ export const ComponentPreview = ({
         );
       case "highlighted-text":
         return (
-          <div className="text-center space-y-4">
-            <p className="text-lg">
-              This is some{" "}
-              <span className="relative">
-                <span className="absolute inset-0 bg-primary/20 rounded-md -z-10"></span>
-                <span className="px-1">highlighted text</span>
-              </span>{" "}
-              in a sentence.
-            </p>
-            <p className="text-lg">
-              Multiple{" "}
-              <span className="relative">
-                <span className="absolute inset-0 bg-accent/20 rounded-md -z-10"></span>
-                <span className="px-1">highlighted</span>
-              </span>{" "}
-              <span className="relative">
-                <span className="absolute inset-0 bg-primary/20 rounded-md -z-10"></span>
-                <span className="px-1">words</span>
-              </span>{" "}
-              example.
-            </p>
-          </div>
+          <HighlightedText>
+            <div className="text-center space-y-4">
+              <p className="text-lg">
+                This is some{" "}
+                <span className="relative">
+                  <span className="absolute inset-0 bg-primary/20 rounded-md -z-10"></span>
+                  <span className="px-1">highlighted text</span>
+                </span>{" "}
+                in a sentence.
+              </p>
+              <p className="text-lg">
+                Multiple{" "}
+                <span className="relative">
+                  <span className="absolute inset-0 bg-accent/20 rounded-md -z-10"></span>
+                  <span className="px-1">highlighted</span>
+                </span>{" "}
+                <span className="relative">
+                  <span className="absolute inset-0 bg-primary/20 rounded-md -z-10"></span>
+                  <span className="px-1">words</span>
+                </span>{" "}
+                example.
+              </p>
+            </div>
+          </HighlightedText>
         );
       case "interactive-card":
         return (
@@ -129,6 +139,12 @@ export const ComponentPreview = ({
               Learn More
             </button>
           </InteractiveCard>
+        );
+      case "animated-theme-toggle":
+        return (
+          <AnimatedThemeToggle
+            className={`${!showTabs ? "pointer-events-none" : ""}`}
+          />
         );
       default:
         return (
@@ -143,7 +159,7 @@ export const ComponentPreview = ({
     return (
       <Card
         onClick={() => navigate(`/components/${component.id}`)}
-        className={cn(className)}
+        className={cn(className, "cursor-pointer")}
       >
         <div className="flex items-center justify-center min-h-[32vh] p-6">
           <PreviewComponent />
@@ -153,9 +169,9 @@ export const ComponentPreview = ({
   }
 
   return (
-    <Card className={cn(className)}>
+    <Card className={cn(className, "w-[60vw]")}>
       <Tabs defaultValue="preview" className="w-full">
-        <div className="px-6 py-3">
+        <div className="px-6 pt-3">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="preview">Preview</TabsTrigger>
             <TabsTrigger value="code">Code</TabsTrigger>
@@ -164,9 +180,11 @@ export const ComponentPreview = ({
 
         <TabsContent
           value="preview"
-          className="p-6 flex items-center justify-center"
+          className="flex items-center justify-center"
         >
-          <PreviewComponent />
+          <div className="pt-4 pb-12">
+            <PreviewComponent />
+          </div>
         </TabsContent>
 
         <TabsContent value="code" className="p-0">
@@ -175,10 +193,10 @@ export const ComponentPreview = ({
               <Button
                 variant="secondary"
                 size="sm"
-                onClick={() => copyToClipboard(component.code)}
+                onClick={() => copyToClipboard(componentRawCode)}
                 className="bg-muted/80 backdrop-blur-sm"
               >
-                <AnimatePresence mode="wait">
+                <motion.animate mode="wait">
                   {copied ? (
                     <motion.span
                       key="copied"
@@ -199,7 +217,7 @@ export const ComponentPreview = ({
                       Copy
                     </motion.span>
                   )}
-                </AnimatePresence>
+                </motion.animate>
               </Button>
             </div>
 
@@ -220,7 +238,7 @@ export const ComponentPreview = ({
                 },
               }}
             >
-              {component.code}
+              {componentRawCode}
             </SyntaxHighlighter>
           </div>
         </TabsContent>
