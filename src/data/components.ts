@@ -71,9 +71,35 @@ export const componentsData: ComponentData[] = [
   {
     id: "suggestive-search",
     name: "Suggestive Search",
-    description:
-      "Search component with animated suggestions and effects",
+    description: "Search component with animated suggestions and effects",
     category: "Search",
+    featured: true,
+    dependencies: ["motion/react"],
+  },
+  {
+    id: "hyper-text",
+    name: "Hyper Text",
+    description:
+      "Animated Hyper Text component that reveals the actual text with defined delay and animation",
+    category: "Text",
+    featured: true,
+    dependencies: ["motion/react"],
+  },
+  {
+    id: "slide-text",
+    name: "Slide Text",
+    description:
+      "Animated Slide Text component that loops through all the texts with specified delay",
+    category: "Text",
+    featured: true,
+    dependencies: ["motion/react"],
+  },
+  {
+    id: "typewriter-text",
+    name: "Typewriter Text",
+    description:
+      "Animated Typewriter Text component that loops through all the texts with specified delay",
+    category: "Text",
     featured: true,
     dependencies: ["motion/react"],
   },

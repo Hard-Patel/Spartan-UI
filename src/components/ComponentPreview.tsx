@@ -15,7 +15,10 @@ import { UserAvatars } from "./showcase/AnimatedUserAvatars";
 import { HighlightedText } from "./showcase/HighlightedText";
 import { InteractiveCard } from "./showcase/InteractiveCard";
 import { Marquee } from "./showcase/Marquee";
+import { SlideText } from "./showcase/SlideText";
 import { SuggestiveSearch } from "./showcase/SuggestiveSearch";
+import { TypeWriterText } from "./showcase/TypeWriterText";
+import { HyperTextToggle } from "./showcase/HyperText";
 
 interface ComponentPreviewProps {
   component: ComponentData;
@@ -156,6 +159,29 @@ export const ComponentPreview = ({
               "Search something here",
               "Try typing email or name of the user",
             ]}
+          />
+        );
+      case "typewriter-text":
+        return (
+          <TypeWriterText
+            texts={[
+              "Search through the database or delete all records Search through the database or delete all records",
+              "Search something here",
+              "Try typing email or name of the user",
+            ]}
+          />
+        );
+      case "slide-text":
+        return (
+          <SlideText
+            direction="up"
+            texts={["MERN Stack developer", "Frontend Engineer"]}
+          />
+        );
+      case "hyper-text":
+        return (
+          <HyperTextToggle
+            texts={["MERN Stack developer", "Frontend Engineer"]}
           />
         );
       default:

@@ -5,23 +5,42 @@ import HighlightedTextCode from "../components/showcase/HighlightedText.tsx?raw"
 import MarqueeCode from "../components/showcase/Marquee.tsx?raw";
 import AnimatedThemeToggleCode from "../components/showcase/AnimatedThemeToggler.tsx?raw";
 import SuggestiveSearchCode from "../components/showcase/SuggestiveSearch.tsx?raw";
+import SlideTextCode from "../components/showcase/SlideText.tsx?raw";
+import TypeWriterTextCode from "../components/showcase/TypeWriterText.tsx?raw";
+import HyperTextCode from "../components/showcase/HyperText.tsx?raw";
 
 export const getComponentCode = (id: string) => {
   switch (id) {
     case "interactive-card":
       return InteractiveCardCode;
+
     case "animated-button":
       return AnimatedButtonCode;
+
     case "marquee":
       return MarqueeCode;
+
     case "highlighted-text":
       return HighlightedTextCode;
+
     case "user-avatars":
       return UserAvatarsCode;
+
     case "animated-theme-toggle":
       return AnimatedThemeToggleCode;
+
     case "suggestive-search":
       return SuggestiveSearchCode;
+
+    case "slide-text":
+      return SlideTextCode;
+
+    case "typewriter-text":
+      return TypeWriterTextCode;
+
+    case "hyper-text":
+      return HyperTextCode;
+
     default:
       return "";
   }
