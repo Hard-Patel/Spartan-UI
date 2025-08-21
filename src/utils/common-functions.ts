@@ -4,6 +4,7 @@ import AnimatedButtonCode from "../components/showcase/AnimatedButton.tsx?raw";
 import HighlightedTextCode from "../components/showcase/HighlightedText.tsx?raw";
 import MarqueeCode from "../components/showcase/Marquee.tsx?raw";
 import AnimatedThemeToggleCode from "../components/showcase/AnimatedThemeToggler.tsx?raw";
+import SuggestiveSearchCode from "../components/showcase/SuggestiveSearch.tsx?raw";
 
 export const getComponentCode = (id: string) => {
   switch (id) {
@@ -19,6 +20,8 @@ export const getComponentCode = (id: string) => {
       return UserAvatarsCode;
     case "animated-theme-toggle":
       return AnimatedThemeToggleCode;
+    case "suggestive-search":
+      return SuggestiveSearchCode;
     default:
       return "";
   }

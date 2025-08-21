@@ -1,20 +1,21 @@
-import { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { cn } from "@/lib/utils";
 import { ComponentData } from "@/data/components";
-import { useNavigate } from "react-router-dom";
-import { InteractiveCard } from "./InteractiveCard";
-import { UserAvatars } from "./AnimatedUserAvatars";
+import { cn } from "@/lib/utils";
 import { getComponentCode } from "@/utils/common-functions";
-import { AnimatedButton } from "./AnimatedButton";
 import { motion } from "motion/react";
-import { Marquee } from "./Marquee";
-import { AnimatedThemeToggle } from "./AnimatedThemeToggler";
-import { HighlightedText } from "./HighlightedText";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { AnimatedButton } from "./showcase/AnimatedButton";
+import { AnimatedThemeToggle } from "./showcase/AnimatedThemeToggler";
+import { UserAvatars } from "./showcase/AnimatedUserAvatars";
+import { HighlightedText } from "./showcase/HighlightedText";
+import { InteractiveCard } from "./showcase/InteractiveCard";
+import { Marquee } from "./showcase/Marquee";
+import { SuggestiveSearch } from "./showcase/SuggestiveSearch";
 
 interface ComponentPreviewProps {
   component: ComponentData;
@@ -146,6 +147,17 @@ export const ComponentPreview = ({
             className={`${!showTabs ? "pointer-events-none" : ""}`}
           />
         );
+      case "suggestive-search":
+        return (
+          <SuggestiveSearch
+            className={`${!showTabs ? "pointer-events-none" : ""}`}
+            suggestions={[
+              "Search through the database or delete all records Search through the database or delete all records",
+              "Search something here",
+              "Try typing email or name of the user",
+            ]}
+          />
+        );
       default:
         return (
           <div className="text-center text-muted-foreground p-8">
@@ -161,7 +173,7 @@ export const ComponentPreview = ({
         onClick={() => navigate(`/components/${component.id}`)}
         className={cn(className, "cursor-pointer")}
       >
-        <div className="flex items-center justify-center min-h-[32vh] p-6">
+        <div className="flex items-center justify-center min-h-[32vh] p-6 overflow-hidden">
           <PreviewComponent />
         </div>
       </Card>
@@ -178,13 +190,10 @@ export const ComponentPreview = ({
           </TabsList>
         </div>
 
-        <TabsContent
-          value="preview"
-          className="flex items-center justify-center"
-        >
-          <div className="pt-4 pb-12">
+        <TabsContent value="preview">
+          <span className="flex items-center justify-center pt-8 pb-12 px-6">
             <PreviewComponent />
-          </div>
+          </span>
         </TabsContent>
 
         <TabsContent value="code" className="p-0">

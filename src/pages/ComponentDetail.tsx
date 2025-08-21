@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
-import { ComponentPreview } from "@/components/showcase/ComponentPreview";
+import { ComponentPreview } from "@/components/ComponentPreview";
 import { Navigation } from "@/components/ui/navigation";
 import { Button } from "@/components/ui/button";
 import { getComponentById, componentsData } from "@/data/components";

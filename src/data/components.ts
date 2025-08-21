@@ -68,6 +68,15 @@ export const componentsData: ComponentData[] = [
     featured: true,
     dependencies: ["motion/react"],
   },
+  {
+    id: "suggestive-search",
+    name: "Suggestive Search",
+    description:
+      "Search component with animated suggestions and effects",
+    category: "Search",
+    featured: true,
+    dependencies: ["motion/react"],
+  },
 ];
 
 export const getFeaturedComponents = () =>

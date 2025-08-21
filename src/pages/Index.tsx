@@ -1,4 +1,4 @@
-import { ComponentPreview } from "@/components/showcase/ComponentPreview";
+import { ComponentPreview } from "@/components/ComponentPreview";
 import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/ui/navigation";
 import { getFeaturedComponents } from "@/data/components";

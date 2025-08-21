@@ -1,6 +1,6 @@
 import { Breadcrumb } from "@/components/common/Breadcrumb";
 import { Sidebar } from "@/components/common/Sidebar";
-import { ComponentPreview } from "@/components/showcase/ComponentPreview";
+import { ComponentPreview } from "@/components/ComponentPreview";
 import { Navigation } from "@/components/ui/navigation";
 import { getAllComponents } from "@/data/components";
 import { Link, useNavigate } from "react-router-dom";
@@ -42,7 +42,7 @@ const Components = () => {
 
             {/* Components Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {components.map((component, index) => (
+              {components.map((component) => (
                 <div key={component.id} className="group">
                   <ComponentPreview component={component} showTabs={false} />
                   <div className="mt-4 space-y-3">
