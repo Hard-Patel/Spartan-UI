@@ -13,7 +13,19 @@ function scrambleText(originalText: string, charset: string[]) {
     .join("");
 }
 
-const HyperTextToggle = ({ texts }: { texts: string[] }) => {
+interface HyperTextToggleProps {
+  texts: string[];
+  /** ⏱ Scramble frame interval (default: 60ms) */
+  transitionDurationMs?: number;
+  /** ⏸ Hold readable text before scrambling (default: 2500ms) */
+  holdDurationMs?: number;
+}
+
+const HyperTextToggle = ({
+  texts,
+  transitionDurationMs = 60,
+  holdDurationMs = 2500,
+}: HyperTextToggleProps) => {
   const maxRoleLength = texts.reduce((acc, text) => {
     if (acc < text.length) {
       acc = text.length;
@@ -34,27 +46,24 @@ const HyperTextToggle = ({ texts }: { texts: string[] }) => {
       scrambleInterval = setInterval(() => {
         scrambleCount++;
         if (scrambleCount <= 8) {
-          // show scrambled text 3 times
           setDisplayText(scrambleText(texts[currentIndex], charset));
         } else {
-          // move to next role and hold for 2 seconds
           clearInterval(scrambleInterval);
           const nextIndex = (currentIndex + 1) % texts.length;
           setCurrentIndex(nextIndex);
           setDisplayText(texts[nextIndex]);
-          holdTimeout = setTimeout(startScramble, 2500); // hold readable text
+          holdTimeout = setTimeout(startScramble, holdDurationMs);
         }
-      }, 60); // scramble speed per frame
+      }, transitionDurationMs);
     };
 
-    // initial delay before first scramble
-    holdTimeout = setTimeout(startScramble, 2500);
+    holdTimeout = setTimeout(startScramble, holdDurationMs);
 
     return () => {
       clearInterval(scrambleInterval);
       clearTimeout(holdTimeout);
     };
-  }, [currentIndex]);
+  }, [currentIndex, texts, transitionDurationMs, holdDurationMs]);
 
   const padToMaxLength = useCallback(
     (text: string) => {
