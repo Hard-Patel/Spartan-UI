@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { LucideProps, Moon, Sun } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import {
   ForwardRefExoticComponent,
   RefAttributes,
@@ -7,7 +8,6 @@ import {
   useState,
 } from "react";
 import { flushSync } from "react-dom";
-import { AnimatePresence, motion } from "motion/react";
 
 type props = {
   className?: string;

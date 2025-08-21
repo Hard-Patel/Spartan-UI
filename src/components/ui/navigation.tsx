@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { AnimatedThemeToggle } from "../showcase/AnimatedThemeToggler";
 
 interface NavigationProps {
   className?: string;
@@ -46,6 +47,8 @@ export const Navigation = ({ className }: NavigationProps) => {
           )}
         </NavLink>
       ))}
+
+      <AnimatedThemeToggle />
     </nav>
   );
 };
