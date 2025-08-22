@@ -9,10 +9,10 @@ interface SearchProps {
   onSearch: (query: string) => void;
 }
 
-export const Search = ({ 
-  placeholder = "Search components...", 
+export const Search = ({
+  placeholder = "Search components...",
   className,
-  onSearch 
+  onSearch,
 }: SearchProps) => {
   const [query, setQuery] = useState("");
   const [isFocused, setIsFocused] = useState(false);
@@ -39,7 +39,7 @@ export const Search = ({
           onChange={handleChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          className="w-full bg-muted/30 border-border/50 focus:border-primary/50 transition-colors duration-200 pl-10"
+          className="w-auto bg-muted/30 border-border/50 focus:border-primary/50 transition-colors duration-200 pl-10"
         />
         <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
           <svg
@@ -57,7 +57,7 @@ export const Search = ({
           </svg>
         </div>
       </motion.div>
-      
+
       {isFocused && (
         <motion.div
           className="absolute inset-0 -z-10 rounded-lg bg-primary/5"

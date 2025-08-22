@@ -6,7 +6,7 @@ import MarqueeCode from "../components/showcase/Marquee.tsx?raw";
 import AnimatedThemeToggleCode from "../components/showcase/AnimatedThemeToggler.tsx?raw";
 import SuggestiveSearchCode from "../components/showcase/SuggestiveSearch.tsx?raw";
 import SlideTextCode from "../components/showcase/SlideText.tsx?raw";
-import TypeWriterTextCode from "../components/showcase/TypeWriterText.tsx?raw";
+import AuroraTextCode from "../components/showcase/AuroraText.tsx?raw";
 import HyperTextCode from "../components/showcase/HyperText.tsx?raw";
 
 export const getComponentCode = (id: string) => {
@@ -35,8 +35,8 @@ export const getComponentCode = (id: string) => {
     case "slide-text":
       return SlideTextCode;
 
-    case "typewriter-text":
-      return TypeWriterTextCode;
+    case "aurora-text":
+      return AuroraTextCode;
 
     case "hyper-text":
       return HyperTextCode;

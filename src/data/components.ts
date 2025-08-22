@@ -95,14 +95,23 @@ export const componentsData: ComponentData[] = [
     dependencies: ["motion/react"],
   },
   {
-    id: "typewriter-text",
-    name: "Typewriter Text",
+    id: "aurora-text",
+    name: "Aurora Text",
     description:
-      "Animated Typewriter Text component that loops through all the texts with specified delay",
+      "Animated Aurora Text component that animates the gradients inside the text",
     category: "Text",
     featured: true,
     dependencies: ["motion/react"],
   },
+  // {
+  //   id: "glass-aurora-text",
+  //   name: "Glassmorphic Aurora Text",
+  //   description:
+  //     "Glassmorphic Aurora Text component that animates the gradients inside the text",
+  //   category: "Text",
+  //   featured: false,
+  //   dependencies: ["motion/react"],
+  // },
 ];
 
 export const getFeaturedComponents = () =>

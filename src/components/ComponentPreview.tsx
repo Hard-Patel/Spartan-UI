@@ -12,13 +12,14 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { AnimatedButton } from "./showcase/AnimatedButton";
 import { AnimatedThemeToggle } from "./showcase/AnimatedThemeToggler";
 import { UserAvatars } from "./showcase/AnimatedUserAvatars";
+import { AuroraText } from "./showcase/AuroraText";
+import { GlassText } from "./showcase/GlassAuroraText";
 import { HighlightedText } from "./showcase/HighlightedText";
+import { HyperTextToggle } from "./showcase/HyperText";
 import { InteractiveCard } from "./showcase/InteractiveCard";
 import { Marquee } from "./showcase/Marquee";
 import { SlideText } from "./showcase/SlideText";
 import { SuggestiveSearch } from "./showcase/SuggestiveSearch";
-import { TypeWriterText } from "./showcase/TypeWriterText";
-import { HyperTextToggle } from "./showcase/HyperText";
 
 interface ComponentPreviewProps {
   component: ComponentData;
@@ -161,16 +162,21 @@ export const ComponentPreview = ({
             ]}
           />
         );
-      case "typewriter-text":
+
+      case "aurora-text":
+        return <AuroraText text="Aurora Effects" />;
+
+      case "glass-aurora-text":
         return (
-          <TypeWriterText
-            texts={[
-              "Search through the database or delete all records Search through the database or delete all records",
-              "Search something here",
-              "Try typing email or name of the user",
-            ]}
-          />
+          <div className="relative h-80 w-full flex items-center justify-center">
+            {/* Moving glowing ball */}
+            <div className="absolute size-44 rounded-full opacity-100 bg-blue-500" />
+
+            {/* Glass text */}
+            <GlassText text="Aurora Effects" />
+          </div>
         );
+
       case "slide-text":
         return (
           <SlideText
@@ -178,6 +184,7 @@ export const ComponentPreview = ({
             texts={["MERN Stack developer", "Frontend Engineer"]}
           />
         );
+
       case "hyper-text":
         return (
           <HyperTextToggle

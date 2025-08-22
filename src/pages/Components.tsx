@@ -1,9 +1,8 @@
 import { Breadcrumb } from "@/components/common/Breadcrumb";
 import { Sidebar } from "@/components/common/Sidebar";
 import { ComponentPreview } from "@/components/ComponentPreview";
-import { Navigation } from "@/components/ui/navigation";
 import { getAllComponents } from "@/data/components";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Components = () => {
   const components = getAllComponents();
@@ -11,21 +10,8 @@ const Components = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border/50 backdrop-blur-sm sticky top-0 z-50 bg-background/80">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold text-gradient">
-              Components
-            </Link>
-            <Navigation />
-          </div>
-        </div>
-      </header>
-
       <div className="max-w-7xl mx-auto px-2 py-8">
         <div className="flex gap-8">
-          <Sidebar />
 
           {/* Main Content */}
           <main className="flex-1">

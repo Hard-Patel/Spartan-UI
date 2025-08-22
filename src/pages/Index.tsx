@@ -1,6 +1,5 @@
 import { ComponentPreview } from "@/components/ComponentPreview";
 import { Button } from "@/components/ui/button";
-import { Navigation } from "@/components/ui/navigation";
 import { getFeaturedComponents } from "@/data/components";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
@@ -10,24 +9,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border/50 backdrop-blur-sm sticky top-0 z-50 bg-background/80">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Link to="/" className="text-2xl font-bold text-gradient">
-                Components
-              </Link>
-            </motion.div>
-            <Navigation />
-          </div>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="relative flex items-center overflow-hidden h-[90vh]">
         <div className="max-w-7xl mx-auto px-6 py-24">
