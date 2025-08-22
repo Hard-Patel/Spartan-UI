@@ -164,7 +164,12 @@ export const ComponentPreview = ({
         );
 
       case "aurora-text":
-        return <AuroraText text="Aurora Effects" />;
+        return (
+          <span className="text-5xl font-extrabold">
+            Normal Text v
+            <AuroraText text="s Aurora Text" />
+          </span>
+        );
 
       case "glass-aurora-text":
         return (
