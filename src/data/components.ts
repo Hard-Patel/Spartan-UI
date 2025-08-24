@@ -35,6 +35,15 @@ export const componentsData: ComponentData[] = [
     dependencies: ["motion/react"],
   },
   {
+    id: "scroll-nav",
+    name: "Scrollbar with ToC",
+    description:
+      "Scrollbar that lets you see the progress and move to the specific section as well",
+    category: "Scrollbar",
+    featured: false,
+    dependencies: ["motion/react"],
+  },
+  {
     id: "marquee",
     name: "Infinite Marquee",
     description:
@@ -126,6 +135,15 @@ export const componentsData: ComponentData[] = [
     name: "Switch",
     description: "Switch component that smoothly toggles the state",
     category: "Switch",
+    featured: false,
+    dependencies: ["motion/react"],
+  },
+  {
+    id: "sparkle-card",
+    name: "Sparkle Card",
+    description:
+      "Card component that have a sparkling effect in the background",
+    category: "Card",
     featured: false,
     dependencies: ["motion/react"],
   },

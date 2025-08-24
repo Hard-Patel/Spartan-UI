@@ -41,6 +41,7 @@
     --ring: 262 83% 58%;
 
     --radius: 0.75rem;
+    --header-height: 4.5rem; /* matches mt-20 (20 * 0.25rem = 5rem) */
 
     /* Custom design tokens */
     --brand-gradient: linear-gradient(

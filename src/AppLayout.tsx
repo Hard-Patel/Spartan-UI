@@ -4,7 +4,7 @@ import { Navigation } from "./components/ui/navigation";
 
 export const AppLayout: React.FC = () => {
   return (
-    <div className="flex font-text min-w-screen overflow-hidden overscroll-x-none flex-col">
+    <div className="flex flex-col">
       <Navigation />
       <ScrollToTop />
       <Outlet />

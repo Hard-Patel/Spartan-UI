@@ -9,7 +9,9 @@ import { HyperTextToggle } from "../showcase/HyperText";
 import { InteractiveCard } from "../showcase/InteractiveCard";
 import { Marquee } from "../showcase/Marquee";
 import { SlideText } from "../showcase/SlideText";
+import { SparkleCard } from "../showcase/SparkleCard";
 import { SuggestiveSearch } from "../showcase/SuggestiveSearch";
+import { ScrollNavPreview } from "./ScrollNavPreview";
 import { ScrollProgressPreviewTab } from "./ScrollProgressPreviewTab";
 import SwitchPreview from "./SwitchPreview";
 
@@ -186,6 +188,19 @@ export const PreviewComponent = ({
 
     case "switch":
       return <SwitchPreview />;
+
+    case "scroll-nav":
+      return <ScrollNavPreview />;
+
+    case "sparkle-card":
+      return (
+        <SparkleCard className="w-96 h-48">
+          <h2 className="text-xl font-bold">Sparkle Card ✨</h2>
+          <p className="text-muted-foreground">
+            Glowing dots in the background
+          </p>
+        </SparkleCard>
+      );
 
     default:
       return (

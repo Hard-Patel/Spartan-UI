@@ -24,10 +24,10 @@ const ComponentDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-2 py-8">
+      <div className="max-w-7xl mx-auto px-2 py-4">
         <div className="flex gap-8">
           {/* Main Content */}
-          <main className="flex-1">
+          <main id="component-details" className="flex-1">
             {/* Breadcrumb */}
             <Breadcrumb
               items={[

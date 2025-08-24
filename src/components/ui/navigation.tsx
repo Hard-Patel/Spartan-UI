@@ -18,9 +18,9 @@ export const Navigation = ({ className }: NavigationProps) => {
   ];
 
   return (
-    <header className="fixed w-full border-b border-border/50 backdrop-blur-sm top-0 z-50 bg-background/80">
-      <div className="w-full mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+    <header className="fixed w-full border-b border-border/50 backdrop-blur-sm top-0 z-50">
+      <div className="flex flex-1 px-8">
+        <div className="flex h-[var(--header-height)] flex-1 justify-between items-center">
           {/* Logo / Brand */}
           <motion.div
             className="flex items-center gap-x-2"

@@ -5,7 +5,7 @@ type Position = "top" | "right";
 
 type ScrollProgressProps = {
   /** Ref of the scrollable container */
-  targetRef: RefObject<HTMLElement>;
+  targetRef?: RefObject<HTMLElement>;
   /** Optional: thickness of the progress bar */
   size?: number;
   /** Optional: className for styling */
@@ -26,7 +26,7 @@ const ScrollProgress = ({
 
   return (
     <motion.div
-      className={`bg-primary ${className || ""}`}
+      className={`bg-primary ${targetRef ? "" : "fixed"} ${className || ""}`}
       style={
         position === "top"
           ? {

@@ -1,5 +1,4 @@
 import { Breadcrumb } from "@/components/common/Breadcrumb";
-import { Sidebar } from "@/components/common/Sidebar";
 import { ComponentPreview } from "@/components/preview/ComponentPreview";
 import { getAllComponents } from "@/data/components";
 import { useNavigate } from "react-router-dom";
@@ -10,9 +9,8 @@ const Components = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-2 py-8">
+      <div className="max-w-7xl mx-auto px-2 py-4">
         <div className="flex gap-8">
-
           {/* Main Content */}
           <main className="flex-1">
             <Breadcrumb
@@ -21,9 +19,7 @@ const Components = () => {
             />
 
             <div className="mb-8">
-              <div>
-                <h1 className="text-4xl font-bold mb-4">All Components</h1>
-              </div>
+              <h1 className="text-4xl font-bold">All Components</h1>
             </div>
 
             {/* Components Grid */}
