@@ -9,6 +9,7 @@ import SlideTextCode from "../components/showcase/SlideText.tsx?raw";
 import AuroraTextCode from "../components/showcase/AuroraText.tsx?raw";
 import HyperTextCode from "../components/showcase/HyperText.tsx?raw";
 import AICardCode from "../components/showcase/AICard.tsx?raw";
+import ScrollProgressCode from "@/components/showcase/ScrollProgress.tsx?raw";
 
 export const getComponentCode = (id: string) => {
   switch (id) {
@@ -42,8 +43,11 @@ export const getComponentCode = (id: string) => {
     case "hyper-text":
       return HyperTextCode;
 
-      case "ai-card":
+    case "ai-card":
       return AICardCode;
+
+    case "scroll-progress":
+      return ScrollProgressCode;
 
     default:
       return "";

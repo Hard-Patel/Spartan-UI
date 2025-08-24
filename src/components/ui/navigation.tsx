@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AnimatedThemeToggle } from "../showcase/AnimatedThemeToggler";
-
+import brush from "../../assets/images/brush.png";
 interface NavigationProps {
   className?: string;
 }
@@ -23,6 +23,7 @@ export const Navigation = ({ className }: NavigationProps) => {
         <div className="flex items-center justify-between">
           {/* Logo / Brand */}
           <motion.div
+            className="flex items-center gap-x-2"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -30,6 +31,7 @@ export const Navigation = ({ className }: NavigationProps) => {
             <Link to="/" className="text-2xl font-bold text-gradient">
               Components
             </Link>
+            <img src={brush} className="size-6 mt-1" />
           </motion.div>
 
           {/* Desktop Nav */}
