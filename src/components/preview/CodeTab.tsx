@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { getComponentCode } from "@/utils/common-functions";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -23,15 +23,15 @@ export const CodeTab = ({ componentId }: { componentId: string }) => {
   const componentRawCode = getComponentCode(componentId);
 
   return (
-    <div className="relative">
-      <div className="absolute top-4 right-4 z-10">
+    <div className="relative px-4">
+      <div className="absolute top-4 right-8 z-10">
         <Button
           variant="secondary"
           size="sm"
           onClick={() => copyToClipboard(componentRawCode)}
           className="bg-muted/80 backdrop-blur-sm"
         >
-          <motion.animate mode="wait">
+          <AnimatePresence mode="wait">
             {copied ? (
               <motion.span
                 key="copied"
@@ -52,7 +52,7 @@ export const CodeTab = ({ componentId }: { componentId: string }) => {
                 Copy
               </motion.span>
             )}
-          </motion.animate>
+          </AnimatePresence>
         </Button>
       </div>
 

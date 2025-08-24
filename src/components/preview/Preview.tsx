@@ -11,6 +11,7 @@ import { Marquee } from "../showcase/Marquee";
 import { SlideText } from "../showcase/SlideText";
 import { SuggestiveSearch } from "../showcase/SuggestiveSearch";
 import { ScrollProgressPreviewTab } from "./ScrollProgressPreviewTab";
+import SwitchPreview from "./SwitchPreview";
 
 export const PreviewComponent = ({
   componentId,
@@ -177,7 +178,14 @@ export const PreviewComponent = ({
       );
 
     case "scroll-progress":
-      return <ScrollProgressPreviewTab />;
+      return (
+        <ScrollProgressPreviewTab
+          className={`${isDetailedPage ? "max-h-80" : ""}`}
+        />
+      );
+
+    case "switch":
+      return <SwitchPreview />;
 
     default:
       return (

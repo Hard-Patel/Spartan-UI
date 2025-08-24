@@ -1,13 +1,21 @@
 import { useRef } from "react";
 import { ScrollProgress } from "../showcase/ScrollProgress";
+import { cn } from "@/lib/utils";
 
-export function ScrollProgressPreviewTab() {
+export function ScrollProgressPreviewTab({
+  className,
+}: {
+  className?: string;
+}) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[400px] overflow-y-auto scroll-hide"
+      className={cn(
+        "relative w-full h-full overflow-y-auto scroll-hide",
+        className
+      )}
     >
       {/* Progress bar bound to this container */}
       <ScrollProgress position="top" targetRef={containerRef} />

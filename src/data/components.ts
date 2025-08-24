@@ -121,6 +121,14 @@ export const componentsData: ComponentData[] = [
     featured: false,
     dependencies: ["motion/react"],
   },
+  {
+    id: "switch",
+    name: "Switch",
+    description: "Switch component that smoothly toggles the state",
+    category: "Switch",
+    featured: false,
+    dependencies: ["motion/react"],
+  },
 ];
 
 export const getFeaturedComponents = () =>

@@ -25,7 +25,7 @@ export const ComponentPreview = ({
         onClick={() => navigate(`/components/${component.id}`)}
         className={cn(className, "cursor-pointer")}
       >
-        <div className="flex items-center justify-center min-h-[32vh] p-6 overflow-hidden">
+        <div className="flex items-center justify-center h-[48vh] p-6 overflow-hidden">
           <PreviewComponent componentId={component.id} isDetailedPage={false} />
         </div>
       </Card>
@@ -44,7 +44,7 @@ export const ComponentPreview = ({
 
         <TabsContent value="preview">
           <span className="flex items-center justify-center pt-8 pb-12 px-6">
-            <PreviewComponent componentId={component.id} />{" "}
+            <PreviewComponent componentId={component.id} />
           </span>
         </TabsContent>
 
