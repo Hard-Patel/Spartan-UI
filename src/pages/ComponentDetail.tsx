@@ -1,6 +1,6 @@
 import { Breadcrumb } from "@/components/common/Breadcrumb";
 import { Sidebar } from "@/components/common/Sidebar";
-import { ComponentPreview } from "@/components/ComponentPreview";
+import { ComponentPreview } from "@/components/preview/ComponentPreview";
 import { Button } from "@/components/ui/button";
 import { componentsData, getComponentById } from "@/data/components";
 import { motion } from "motion/react";

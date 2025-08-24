@@ -1,6 +1,6 @@
 import { Breadcrumb } from "@/components/common/Breadcrumb";
 import { Sidebar } from "@/components/common/Sidebar";
-import { ComponentPreview } from "@/components/ComponentPreview";
+import { ComponentPreview } from "@/components/preview/ComponentPreview";
 import { getAllComponents } from "@/data/components";
 import { useNavigate } from "react-router-dom";
 

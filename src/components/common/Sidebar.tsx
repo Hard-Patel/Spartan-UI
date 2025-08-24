@@ -5,7 +5,6 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Sidebar = () => {
-  const [searchQuery, setSearchQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const components = getAllComponents();
   const navigate = useNavigate();
@@ -36,12 +35,12 @@ const Sidebar = () => {
           >
             <div className="border-r bg-background z-50 p-2 pr-6 h-full overflow-y-auto md:p-0 space-y-6">
               {/* Search */}
-              <div>
+              {/* <div>
                 <h3 className="text-sm font-medium text-muted-foreground mb-3">
                   Search
                 </h3>
-                {/* <Search className="max-w-32" onSearch={setSearchQuery} /> */}
-              </div>
+                <Search className="max-w-32" onSearch={setSearchQuery} />
+              </div> */}
 
               {/* Categories */}
               <div>
@@ -53,7 +52,7 @@ const Sidebar = () => {
                     <motion.button
                       key={component.id}
                       disabled={id === component.id}
-                      className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors  ${
+                      className={`w-[90%] text-left px-3 py-2 rounded-lg text-sm transition-colors  ${
                         id === component.id
                           ? "text-primary"
                           : "text-muted-foreground hover:text-foreground hover:bg-muted/50"

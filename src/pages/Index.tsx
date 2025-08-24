@@ -1,4 +1,4 @@
-import { ComponentPreview } from "@/components/ComponentPreview";
+import { ComponentPreview } from "@/components/preview/ComponentPreview";
 import { Button } from "@/components/ui/button";
 import { getFeaturedComponents } from "@/data/components";
 import { motion } from "motion/react";

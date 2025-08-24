@@ -18,11 +18,20 @@ export const componentCategories = [
 
 export const componentsData: ComponentData[] = [
   {
+    id: "ai-card",
+    name: "AI Card",
+    description:
+      "Card component that wraps childrens and can be easily used to highlight or give AI effect",
+    category: "Card",
+    featured: true,
+    dependencies: ["motion/react"],
+  },
+  {
     id: "animated-button",
     name: "Animated Button",
     description: "A sleek button with hover animations and gradient background",
     category: "Buttons",
-    featured: true,
+    featured: false,
     dependencies: ["motion/react"],
   },
   {
@@ -31,7 +40,7 @@ export const componentsData: ComponentData[] = [
     description:
       "Smooth infinite scrolling text marquee with customizable speed",
     category: "Animations",
-    featured: true,
+    featured: false,
     dependencies: ["motion/react"],
   },
   {
@@ -39,7 +48,7 @@ export const componentsData: ComponentData[] = [
     name: "Highlighted Text",
     description: "Text with animated highlight background effect",
     category: "Text Effects",
-    featured: true,
+    featured: false,
     dependencies: ["motion/react"],
   },
   {
@@ -47,7 +56,7 @@ export const componentsData: ComponentData[] = [
     name: "Interactive Card",
     description: "Card with tilt effect and animated border on hover",
     category: "Cards",
-    featured: true,
+    featured: false,
     dependencies: ["motion/react"],
   },
   {
@@ -65,7 +74,7 @@ export const componentsData: ComponentData[] = [
     description:
       "Animated Button to Toggle the theme with ripple effect, giving a great UX",
     category: "Theme Toggle",
-    featured: true,
+    featured: false,
     dependencies: ["motion/react"],
   },
   {
@@ -82,7 +91,7 @@ export const componentsData: ComponentData[] = [
     description:
       "Animated Hyper Text component that reveals the actual text with defined delay and animation",
     category: "Text",
-    featured: true,
+    featured: false,
     dependencies: ["motion/react"],
   },
   {
@@ -91,7 +100,7 @@ export const componentsData: ComponentData[] = [
     description:
       "Animated Slide Text component that loops through all the texts with specified delay",
     category: "Text",
-    featured: true,
+    featured: false,
     dependencies: ["motion/react"],
   },
   {
@@ -103,24 +112,21 @@ export const componentsData: ComponentData[] = [
     featured: true,
     dependencies: ["motion/react"],
   },
-  // {
-  //   id: "glass-aurora-text",
-  //   name: "Glassmorphic Aurora Text",
-  //   description:
-  //     "Glassmorphic Aurora Text component that animates the gradients inside the text",
-  //   category: "Text",
-  //   featured: false,
-  //   dependencies: ["motion/react"],
-  // },
+  {
+    id: "scroll-progress",
+    name: "Scroll Progress",
+    description:
+      "Scroll Progress Component which can be used to add the progress view in top, bottom, left or right view",
+    category: "Scroll",
+    featured: false,
+    dependencies: ["motion/react"],
+  },
 ];
 
 export const getFeaturedComponents = () =>
   componentsData.filter((comp) => comp.featured);
+
 export const getAllComponents = () => componentsData;
 
-export const getComponentsByCategory = (category: string) =>
-  category === "All"
-    ? componentsData
-    : componentsData.filter((comp) => comp.category === category);
 export const getComponentById = (id: string) =>
   componentsData.find((comp) => comp.id === id);

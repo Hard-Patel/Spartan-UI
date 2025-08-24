@@ -8,6 +8,7 @@ import SuggestiveSearchCode from "../components/showcase/SuggestiveSearch.tsx?ra
 import SlideTextCode from "../components/showcase/SlideText.tsx?raw";
 import AuroraTextCode from "../components/showcase/AuroraText.tsx?raw";
 import HyperTextCode from "../components/showcase/HyperText.tsx?raw";
+import AICardCode from "../components/showcase/AICard.tsx?raw";
 
 export const getComponentCode = (id: string) => {
   switch (id) {
@@ -40,6 +41,9 @@ export const getComponentCode = (id: string) => {
 
     case "hyper-text":
       return HyperTextCode;
+
+      case "ai-card":
+      return AICardCode;
 
     default:
       return "";
