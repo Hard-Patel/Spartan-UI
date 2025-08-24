@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { ScrollNav } from "../showcase/ScrollNav";
+import { useLocation } from "react-router-dom";
 
 export function ScrollNavPreview() {
   const sections = [
@@ -9,13 +10,20 @@ export function ScrollNavPreview() {
     { id: "usage", label: "Usage" },
     { id: "faq", label: "FAQ" },
   ];
+  const location = useLocation();
 
   useEffect(() => {
-    document.documentElement.classList.add("scroll-hide"); // or document.body
+    if (location.pathname.includes("scroll-nav")) {
+      document.documentElement.classList.add("scroll-hide"); // or document.body
+    }
     return () => {
       document.documentElement.classList.remove("scroll-hide");
     };
   }, []);
+
+  if (!location.pathname.includes("scroll-nav")) {
+    return null;
+  }
 
   return (
     <div className="flex-1">
