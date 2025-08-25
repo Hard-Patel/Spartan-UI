@@ -12,6 +12,9 @@ import InteractiveCardCode from "../components/showcase/InteractiveCard.tsx?raw"
 import MarqueeCode from "../components/showcase/Marquee.tsx?raw";
 import SlideTextCode from "../components/showcase/SlideText.tsx?raw";
 import SuggestiveSearchCode from "../components/showcase/SuggestiveSearch.tsx?raw";
+import ScrollNavCode from "../components/showcase/ScrollNav.tsx?raw";
+import SwitchCode from "../components/showcase/Switch.tsx?raw";
+import SparkleCardCode from "../components/showcase/SparkleCard.tsx?raw";
 
 export const getComponentCode = (id: string) => {
   switch (id) {
@@ -53,6 +56,15 @@ export const getComponentCode = (id: string) => {
 
     case "scroll-progress":
       return ScrollProgressCode;
+
+    case "scroll-nav":
+      return ScrollNavCode;
+
+    case "switch":
+      return SwitchCode;
+
+    case "sparkle-card":
+      return SparkleCardCode;
 
     default:
       return "";
