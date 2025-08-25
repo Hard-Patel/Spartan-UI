@@ -119,7 +119,8 @@ const Index = () => {
       <footer className="border-t border-border/50 py-12">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-muted-foreground">
-            Built with React, Tailwind CSS, and Framer Motion
+            Built with React, Tailwind CSS, Framer Motion and ❤️ by{" "}
+            <a target="_blank" className="text-primary font-medium" href="https://github.com/Hard-patel">Hard Patel</a>
           </p>
         </div>
       </footer>

@@ -18,7 +18,7 @@ export const Navigation = ({ className }: NavigationProps) => {
   ];
 
   return (
-    <header className="fixed w-full border-b border-border/50 backdrop-blur-sm top-0 z-50">
+    <header className="sticky w-full border-b border-border/50 backdrop-blur-sm top-0 z-50">
       <div className="flex flex-1 px-8">
         <div className="flex h-[var(--header-height)] flex-1 justify-between items-center">
           {/* Logo / Brand */}

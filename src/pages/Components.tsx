@@ -4,7 +4,7 @@ import { getAllComponents } from "@/data/components";
 import { useNavigate } from "react-router-dom";
 
 const Components = () => {
-  const components = getAllComponents();
+  const components = getAllComponents(true);
   const navigate = useNavigate();
 
   return (

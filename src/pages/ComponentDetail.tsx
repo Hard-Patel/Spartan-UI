@@ -1,5 +1,4 @@
 import { Breadcrumb } from "@/components/common/Breadcrumb";
-import { Sidebar } from "@/components/common/Sidebar";
 import { ComponentPreview } from "@/components/preview/ComponentPreview";
 import { Button } from "@/components/ui/button";
 import { componentsData, getComponentById } from "@/data/components";
