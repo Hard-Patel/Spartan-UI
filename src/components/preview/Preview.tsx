@@ -1,8 +1,8 @@
+import { COMPONENT_IDS } from "@/data/components";
 import AICard from "../showcase/AICard";
 import { AnimatedButton } from "../showcase/AnimatedButton";
 import { AnimatedThemeToggle } from "../showcase/AnimatedThemeToggler";
 import { AuroraText } from "../showcase/AuroraText";
-import { GlassText } from "../showcase/GlassAuroraText";
 import { HighlightedText } from "../showcase/HighlightedText";
 import { HyperTextToggle } from "../showcase/HyperText";
 import { InteractiveCard } from "../showcase/InteractiveCard";
@@ -11,10 +11,10 @@ import { SlideText } from "../showcase/SlideText";
 import { SparkleCard } from "../showcase/SparkleCard";
 import { SuggestiveSearch } from "../showcase/SuggestiveSearch";
 import GlassCardPreview from "./GlassCardPreview";
-import { ScrollNavPreview } from "./ScrollNavPreview";
 import { ScrollProgressPreviewTab } from "./ScrollProgressPreviewTab";
 import SwitchPreview from "./SwitchPreview";
 import { UserAvatarsPreview } from "./UserAvatarsPreview";
+import { ScrollNavPreview } from "./ScrollNavPreview";
 
 export const PreviewComponent = ({
   componentId,
@@ -25,7 +25,7 @@ export const PreviewComponent = ({
 }) => {
   // Dynamic component rendering based on component ID
   switch (componentId) {
-    case "ai-card":
+    case COMPONENT_IDS.aiCard:
       return (
         <AICard animate rounded="sm">
           <button className="px-12 py-2 rounded-sm bg-background">
@@ -34,10 +34,10 @@ export const PreviewComponent = ({
         </AICard>
       );
 
-    case "glass-card":
+    case COMPONENT_IDS.glassCard:
       return <GlassCardPreview />;
 
-    case "animated-button":
+    case COMPONENT_IDS.animatedButton:
       return (
         <div className="flex gap-4 flex-wrap justify-center">
           <AnimatedButton>Primary Button</AnimatedButton>
@@ -46,13 +46,13 @@ export const PreviewComponent = ({
         </div>
       );
 
-    case "marquee":
+    case COMPONENT_IDS.marquee:
       return <Marquee>Hello</Marquee>;
 
-    case "user-avatars":
+    case COMPONENT_IDS.userAvatars:
       return <UserAvatarsPreview />;
 
-    case "highlighted-text":
+    case COMPONENT_IDS.highlightedText:
       return (
         <HighlightedText>
           <div className="text-center space-y-4">
@@ -79,7 +79,8 @@ export const PreviewComponent = ({
           </div>
         </HighlightedText>
       );
-    case "interactive-card":
+
+    case COMPONENT_IDS.interactiveCard:
       return (
         <InteractiveCard>
           <h3 className="text-xl font-semibold mb-2">Interactive Card</h3>
@@ -91,13 +92,15 @@ export const PreviewComponent = ({
           </button>
         </InteractiveCard>
       );
-    case "animated-theme-toggle":
+
+    case COMPONENT_IDS.animatedThemeToggle:
       return (
         <AnimatedThemeToggle
           className={`${!isDetailedPage ? "pointer-events-none" : ""}`}
         />
       );
-    case "suggestive-search":
+
+    case COMPONENT_IDS.suggestiveSearch:
       return (
         <SuggestiveSearch
           className={`${!isDetailedPage ? "pointer-events-none" : ""}`}
@@ -109,7 +112,7 @@ export const PreviewComponent = ({
         />
       );
 
-    case "aurora-text":
+    case COMPONENT_IDS.auroraText:
       return (
         <span className="text-5xl font-extrabold">
           Normal Text v
@@ -117,18 +120,7 @@ export const PreviewComponent = ({
         </span>
       );
 
-    case "glass-aurora-text":
-      return (
-        <div className="relative h-80 w-full flex items-center justify-center">
-          {/* Moving glowing ball */}
-          <div className="absolute size-44 rounded-full opacity-100 bg-blue-500" />
-
-          {/* Glass text */}
-          <GlassText text="Aurora Effects" />
-        </div>
-      );
-
-    case "slide-text":
+    case COMPONENT_IDS.slideText:
       return (
         <SlideText
           direction="up"
@@ -136,34 +128,35 @@ export const PreviewComponent = ({
         />
       );
 
-    case "hyper-text":
+    case COMPONENT_IDS.hyperText:
       return (
         <HyperTextToggle
           texts={["MERN Stack developer", "Frontend Engineer"]}
         />
       );
 
-    case "scroll-progress":
+    case COMPONENT_IDS.scrollProgress:
       return (
         <ScrollProgressPreviewTab
           className={`${isDetailedPage ? "max-h-80" : ""}`}
         />
       );
 
-    case "switch":
+    case COMPONENT_IDS.switch:
       return <SwitchPreview />;
 
     case "scroll-nav":
-      return <ScrollNavPreview />;
-
-    case "sparkle-card":
+      if (isDetailedPage) {
+        return <ScrollNavPreview />;
+      }
       return (
-        <SparkleCard className="w-96 h-48">
-          <h2 className="text-xl font-bold">Sparkle Card ✨</h2>
-          <p className="text-muted-foreground">
-            Glowing dots in the background
-          </p>
-        </SparkleCard>
+        <div>
+          <img src="https://spartan-ui-lib.s3.ap-south-1.amazonaws.com/srk-shah-rukh-khan.gif" />
+          <div className="text-center text-xl my-2">
+            Aao, aao, <AuroraText className="text-xl" text="Andar aao" />
+            <div className="text-sm">(For Preview)</div>
+          </div>
+        </div>
       );
 
     case "sparkle-card":

@@ -23,7 +23,7 @@ const ComponentDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-2 py-4">
+      <div className="max-w-7xl mx-auto  py-4">
         <div className="flex gap-8">
           {/* Main Content */}
           <main id="component-details" className="flex-1">
@@ -44,8 +44,10 @@ const ComponentDetail = () => {
             >
               <div className="flex items-start justify-between mb-6">
                 <div>
-                  <h1 className="text-4xl font-bold mb-2">{component.name}</h1>
-                  <p className="text-xl text-muted-foreground mb-4">
+                  <h1 className="text-2xl md:text-4xl font-bold mb-2">
+                    {component.name}
+                  </h1>
+                  <p className="text-md md:text-xl text-muted-foreground mb-4">
                     {component.description}
                   </p>
                   <div className="flex items-center gap-4">
@@ -84,9 +86,11 @@ const ComponentDetail = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-12"
+              className="mb-12 max-w-[88vw]"
             >
-              <h2 className="text-2xl font-bold mb-4">Installation</h2>
+              <h2 className="text-xl md:text-2xl font-bold mb-4">
+                Installation
+              </h2>
               <div className="code-block">
                 <p className="text-sm text-muted-foreground mb-3">
                   Copy and paste the component code into your project.
@@ -114,7 +118,7 @@ const ComponentDetail = () => {
             >
               <div className="flex justify-between items-center">
                 {prevComponent ? (
-                  <Button asChild variant="outline">
+                  <Button className="hidden md:block" asChild variant="outline">
                     <Link
                       to={`/components/${prevComponent.id}`}
                       className="flex items-center gap-2"

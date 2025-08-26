@@ -10,60 +10,60 @@ import HighlightedTextCode from "../components/showcase/HighlightedText.tsx?raw"
 import HyperTextCode from "../components/showcase/HyperText.tsx?raw";
 import InteractiveCardCode from "../components/showcase/InteractiveCard.tsx?raw";
 import MarqueeCode from "../components/showcase/Marquee.tsx?raw";
-import SlideTextCode from "../components/showcase/SlideText.tsx?raw";
-import SuggestiveSearchCode from "../components/showcase/SuggestiveSearch.tsx?raw";
 import ScrollNavCode from "../components/showcase/ScrollNav.tsx?raw";
-import SwitchCode from "../components/showcase/Switch.tsx?raw";
+import SlideTextCode from "../components/showcase/SlideText.tsx?raw";
 import SparkleCardCode from "../components/showcase/SparkleCard.tsx?raw";
+import SuggestiveSearchCode from "../components/showcase/SuggestiveSearch.tsx?raw";
+import SwitchCode from "../components/showcase/Switch.tsx?raw";
 
 export const getComponentCode = (id: string) => {
   switch (id) {
     case COMPONENT_IDS.glassCard:
       return GlassCardCode;
 
-    case "interactive-card":
+    case COMPONENT_IDS.interactiveCard:
       return InteractiveCardCode;
 
-    case "animated-button":
+    case COMPONENT_IDS.animatedButton:
       return AnimatedButtonCode;
 
-    case "marquee":
+    case COMPONENT_IDS.marquee:
       return MarqueeCode;
 
-    case "highlighted-text":
+    case COMPONENT_IDS.highlightedText:
       return HighlightedTextCode;
 
-    case "user-avatars":
+    case COMPONENT_IDS.userAvatars:
       return UserAvatarsCode;
 
-    case "animated-theme-toggle":
+    case COMPONENT_IDS.animatedThemeToggle:
       return AnimatedThemeToggleCode;
 
-    case "suggestive-search":
+    case COMPONENT_IDS.suggestiveSearch:
       return SuggestiveSearchCode;
 
-    case "slide-text":
+    case COMPONENT_IDS.slideText:
       return SlideTextCode;
 
-    case "aurora-text":
+    case COMPONENT_IDS.auroraText:
       return AuroraTextCode;
 
-    case "hyper-text":
+    case COMPONENT_IDS.hyperText:
       return HyperTextCode;
 
-    case "ai-card":
+    case COMPONENT_IDS.aiCard:
       return AICardCode;
 
-    case "scroll-progress":
+    case COMPONENT_IDS.scrollProgress:
       return ScrollProgressCode;
 
-    case "scroll-nav":
+    case COMPONENT_IDS.scrollNav:
       return ScrollNavCode;
 
-    case "switch":
+    case COMPONENT_IDS.switch:
       return SwitchCode;
 
-    case "sparkle-card":
+    case COMPONENT_IDS.sparkleCard:
       return SparkleCardCode;
 
     default:

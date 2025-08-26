@@ -47,7 +47,7 @@ export default function AICard({
       >
         {/* Border layer */}
         {animate ? (
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] aspect-[1/1]">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[102%] aspect-[1/1]">
             <motion.div
               className="w-full h-full"
               style={{

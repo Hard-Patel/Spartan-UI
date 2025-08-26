@@ -41,11 +41,11 @@ export const COMPONENT_IDS = {
 export const COMPONENT_ORDER = [
   COMPONENT_IDS.aiCard,
   COMPONENT_IDS.sparkleCard,
-  COMPONENT_IDS.scrollNav,
   COMPONENT_IDS.glassCard,
   COMPONENT_IDS.userAvatars,
   COMPONENT_IDS.suggestiveSearch,
   COMPONENT_IDS.scrollProgress,
+  COMPONENT_IDS.scrollNav,
   COMPONENT_IDS.animatedThemeToggle,
   COMPONENT_IDS.auroraText,
   COMPONENT_IDS.interactiveCard,
@@ -85,7 +85,7 @@ const rawComponentsData: ComponentData[] = [
       "Scrollbar that lets you see the progress and move to the specific section as well",
     category: "Scrollbar",
     featured: false,
-    listed: false,
+    listed: true,
     dependencies: ["motion/react"],
   },
   {

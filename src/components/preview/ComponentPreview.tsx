@@ -33,7 +33,7 @@ export const ComponentPreview = ({
   }
 
   return (
-    <Card className={cn(className, "w-[60vw]")}>
+    <Card className={cn(className, "overflow-hidden w-[88vw] md:w-[60vw]")}>
       <Tabs defaultValue="preview" className="w-full">
         <div className="px-6 pt-3">
           <TabsList className="grid w-full grid-cols-2">
@@ -48,7 +48,7 @@ export const ComponentPreview = ({
           </span>
         </TabsContent>
 
-        <TabsContent value="code" className="p-0">
+        <TabsContent value="code" className="py-4">
           <CodeTab componentId={component.id} />
         </TabsContent>
       </Tabs>

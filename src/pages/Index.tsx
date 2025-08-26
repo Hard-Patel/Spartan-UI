@@ -19,13 +19,13 @@ const Index = () => {
               transition={{ duration: 0.6 }}
               className="space-y-4"
             >
-              <h1 className="text-6xl md:text-7xl font-bold leading-tight">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight">
                 Beautiful{" "}
                 <span className="text-gradient animate-glow">
                   React Components
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 A curated collection of modern, animated, and responsive React
                 components built with Tailwind CSS and Framer Motion. Copy,
                 paste, and customize to your heart's content.
@@ -66,8 +66,10 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4">Featured Components</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Featured Components
+            </h2>
+            <p className="text-md lg:text-xl text-muted-foreground max-w-2xl mx-auto">
               Handpicked components that showcase the power and beauty of modern
               web interfaces
             </p>
@@ -120,7 +122,13 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-muted-foreground">
             Built with React, Tailwind CSS, Framer Motion and ❤️ by{" "}
-            <a target="_blank" className="text-primary font-medium" href="https://github.com/Hard-patel">Hard Patel</a>
+            <a
+              target="_blank"
+              className="text-primary font-medium"
+              href="https://github.com/Hard-patel"
+            >
+              Hard Patel
+            </a>
           </p>
         </div>
       </footer>
