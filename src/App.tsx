@@ -25,8 +25,8 @@ const App = () => (
               <Route path="/components" element={<Components />} />
               <Route path="/components/:id" element={<ComponentDetail />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

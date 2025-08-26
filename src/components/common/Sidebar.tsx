@@ -13,7 +13,7 @@ const Sidebar = () => {
   const showSidebar = location.pathname.includes("components");
 
   return (
-    <div className="relative h-screen col-span-1">
+    <div className="sticky top-[var(--header-height)] h-screen w-80">
       {/* Toggle Button (visible only on small screens) */}
       <motion.div className="md:hidden fixed top-14 left-2 z-50">
         <button
