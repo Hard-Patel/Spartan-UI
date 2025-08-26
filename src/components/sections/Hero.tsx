@@ -1,11 +1,32 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
+import { useState } from "react";
 
 const HeroSection = () => {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
   return (
-    <section className="relative flex items-center overflow-hidden h-[90vh]">
-      <div className="max-w-7xl mx-auto px-6 py-24">
+    <section
+      className="relative flex items-center overflow-hidden h-[90vh] bg-background"
+      onMouseMove={(e) => setMousePos({ x: e.clientX, y: e.clientY - 72 })}
+    >
+      {/* Gradient ball following cursor */}
+      <motion.div
+        className="absolute w-64 h-64 rounded-full opacity-50 pointer-events-none blur-3xl"
+        style={{
+          background:
+            "radial-gradient(circle at center, #ff7eb3, #ff758c, #7afcff)",
+        }}
+        animate={{ x: mousePos.x - 128, y: mousePos.y - 256 }}
+        transition={{ type: "spring", stiffness: 20, damping: 100 }}
+      />
+
+      {/* Glass morph overlay */}
+      <div className="absolute inset-0 backdrop-blur-xl bg-background/30 z-0" />
+
+      {/* Hero content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
         <div className="text-center space-y-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
