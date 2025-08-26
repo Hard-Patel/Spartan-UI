@@ -1,4 +1,5 @@
 import { ComponentPreview } from "@/components/preview/ComponentPreview";
+import { HeroSection } from "@/components/sections/Hero";
 import { Button } from "@/components/ui/button";
 import { getFeaturedComponents } from "@/data/components";
 import { motion } from "motion/react";
@@ -10,51 +11,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative flex items-center overflow-hidden h-[90vh]">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <div className="text-center space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="space-y-4"
-            >
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight">
-                Beautiful{" "}
-                <span className="text-gradient animate-glow">
-                  React Components
-                </span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                A curated collection of modern, animated, and responsive React
-                components built with Tailwind CSS and Framer Motion. Copy,
-                paste, and customize to your heart's content.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex gap-4 justify-center"
-            >
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-brand text-primary-foreground shadow-glow hover:scale-105 transition-transform duration-300"
-              >
-                <Link to="/components">Browse Components</Link>
-              </Button>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Background Gradient */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
-          <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Featured Components */}
       <section className="py-24 bg-muted/20">
