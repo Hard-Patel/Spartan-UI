@@ -82,7 +82,7 @@ const Index = () => {
             <a
               target="_blank"
               className="text-primary font-medium"
-              href="https://github.com/Hard-patel"
+              href="https://hard-patel.netlify.app"
             >
               Hard Patel
             </a>

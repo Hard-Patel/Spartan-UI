@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import { useState } from "react";
 
 const HeroSection = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -19,7 +19,7 @@ const HeroSection = () => {
             "radial-gradient(circle at center, #ff7eb3, #ff758c, #7afcff)",
         }}
         animate={{ x: mousePos.x - 128, y: mousePos.y - 256 }}
-        transition={{ type: "spring", stiffness: 20, damping: 100 }}
+        transition={{ type: "spring", stiffness: 150, damping: 100 }}
       />
 
       {/* Glass morph overlay */}
