@@ -13,10 +13,10 @@ const HeroSection = () => {
     >
       {/* Gradient ball following cursor */}
       <motion.div
-        className="absolute w-64 h-64 rounded-full opacity-15 pointer-events-none blur-3xl"
+        className="absolute w-64 h-64 rounded-full opacity-20 pointer-events-none blur-3xl"
         style={{
           background:
-            "radial-gradient(circle at center, #ff7eb3, #ff758c, #7afcff)",
+            "radial-gradient(circle at center, #fff, #0000ff, #fff)",
         }}
         animate={{ x: mousePos.x - 128, y: mousePos.y - 256 }}
         transition={{ type: "spring", stiffness: 150, damping: 100 }}

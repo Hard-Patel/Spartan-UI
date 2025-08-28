@@ -15,6 +15,8 @@ import { ScrollProgressPreviewTab } from "./ScrollProgressPreviewTab";
 import SwitchPreview from "./SwitchPreview";
 import { UserAvatarsPreview } from "./UserAvatarsPreview";
 import { ScrollNavPreview } from "./ScrollNavPreview";
+import { MaskedText } from "../showcase/MaskedText";
+import { VideoMaskedText } from "../showcase/VideoMaskedText";
 
 export const PreviewComponent = ({
   componentId,
@@ -167,6 +169,24 @@ export const PreviewComponent = ({
             Glowing dots in the background
           </p>
         </SparkleCard>
+      );
+
+    case "masked-text":
+      return (
+        <MaskedText
+          text="Beutiful"
+          imageUrl="https://spartan-ui-lib.s3.ap-south-1.amazonaws.com/colorful-abstract"
+          className="text-8xl text-center"
+        />
+      );
+
+    case "video-masked-text":
+      return (
+        <div className="relative h-[200px] w-full overflow-hidden">
+          <VideoMaskedText src="https://spartan-ui-lib.s3.ap-south-1.amazonaws.com/video-masked-text">
+            Abstract
+          </VideoMaskedText>
+        </div>
       );
 
     default:

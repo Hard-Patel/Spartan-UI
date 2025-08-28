@@ -26,7 +26,7 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       {showSidebar && (isOpen || window.innerWidth >= 768) ? (
-        <div className="relative h-screen col-span-1">
+        <div className="relative h-screen">
           <motion.aside
             initial={{ x: -300 }}
             animate={{ x: isOpen || window.innerWidth >= 768 ? 0 : -300 }}
@@ -34,14 +34,6 @@ const Sidebar = () => {
             className={`md:static fixed h-full`}
           >
             <div className="scroll-hide border-r bg-background z-50 px-6 py-2 pr-6 h-full overflow-y-auto md:p-0 space-y-6">
-              {/* Search */}
-              {/* <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-3">
-                  Search
-                </h3>
-                <Search className="max-w-32" onSearch={setSearchQuery} />
-              </div> */}
-
               {/* Categories */}
               <div className="mt-4">
                 <h3 className="text-sm font-medium text-muted-foreground mb-3">

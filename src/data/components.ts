@@ -35,6 +35,8 @@ export const COMPONENT_IDS = {
   scrollProgress: "scroll-progress",
   switch: "switch",
   sparkleCard: "sparkle-card",
+  maskedText: "masked-text",
+  videoMaskedText: "video-masked-text",
 } as const;
 
 // 2. Define the display order using COMPONENT_IDS only
@@ -46,6 +48,8 @@ export const COMPONENT_ORDER = [
   COMPONENT_IDS.suggestiveSearch,
   COMPONENT_IDS.scrollProgress,
   COMPONENT_IDS.scrollNav,
+  COMPONENT_IDS.videoMaskedText,
+  COMPONENT_IDS.maskedText,
   COMPONENT_IDS.animatedThemeToggle,
   COMPONENT_IDS.auroraText,
   COMPONENT_IDS.interactiveCard,
@@ -64,6 +68,26 @@ const rawComponentsData: ComponentData[] = [
     name: "Glass Card",
     description: "Card component that have Glass morphic effect",
     category: "Card",
+    featured: true,
+    listed: true,
+    dependencies: ["motion/react"],
+  },
+  {
+    id: COMPONENT_IDS.maskedText,
+    name: "Masked Text",
+    description:
+      "Text with the background image which is visible through the masked effect",
+    category: "Text",
+    featured: true,
+    listed: true,
+    dependencies: ["motion/react"],
+  },
+  {
+    id: COMPONENT_IDS.videoMaskedText,
+    name: "Video Masked Text",
+    description:
+      "Text with the video background which is visible through the masked effect",
+    category: "Text",
     featured: true,
     listed: true,
     dependencies: ["motion/react"],
