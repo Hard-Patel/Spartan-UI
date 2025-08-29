@@ -15,6 +15,8 @@ import SlideTextCode from "../components/showcase/SlideText.tsx?raw";
 import SparkleCardCode from "../components/showcase/SparkleCard.tsx?raw";
 import SuggestiveSearchCode from "../components/showcase/SuggestiveSearch.tsx?raw";
 import SwitchCode from "../components/showcase/Switch.tsx?raw";
+import MaskedTextCode from "../components/showcase/MaskedText.tsx?raw";
+import VideoMaskedTextCode from "../components/showcase/VideoMaskedText.tsx?raw";
 
 export const getComponentCode = (id: string) => {
   switch (id) {
@@ -65,6 +67,12 @@ export const getComponentCode = (id: string) => {
 
     case COMPONENT_IDS.sparkleCard:
       return SparkleCardCode;
+
+    case COMPONENT_IDS.maskedText:
+      return MaskedTextCode;
+
+    case COMPONENT_IDS.videoMaskedText:
+      return VideoMaskedTextCode;
 
     default:
       return "";
