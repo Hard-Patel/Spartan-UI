@@ -35,6 +35,7 @@ export const COMPONENT_IDS = {
   scrollProgress: "scroll-progress",
   switch: "switch",
   sparkleCard: "sparkle-card",
+  revealText: "reveal-text",
   maskedText: "masked-text",
   videoMaskedText: "video-masked-text",
 } as const;
@@ -44,6 +45,7 @@ export const COMPONENT_ORDER = [
   COMPONENT_IDS.aiCard,
   COMPONENT_IDS.sparkleCard,
   COMPONENT_IDS.glassCard,
+  COMPONENT_IDS.revealText,
   COMPONENT_IDS.userAvatars,
   COMPONENT_IDS.suggestiveSearch,
   COMPONENT_IDS.scrollProgress,
@@ -77,6 +79,15 @@ const rawComponentsData: ComponentData[] = [
     name: "Masked Text",
     description:
       "Text with the background image which is visible through the masked effect",
+    category: "Text",
+    featured: true,
+    listed: true,
+    dependencies: ["motion/react"],
+  },
+  {
+    id: COMPONENT_IDS.revealText,
+    name: "Text Reveal",
+    description: "Text with animated effect of reveal",
     category: "Text",
     featured: true,
     listed: true,
@@ -128,7 +139,7 @@ const rawComponentsData: ComponentData[] = [
       "Smooth infinite scrolling text marquee with customizable speed",
     category: "Animations",
     featured: false,
-    listed: false,
+    listed: true,
     dependencies: ["motion/react"],
   },
   {

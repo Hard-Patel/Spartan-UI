@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 
 const HeroSection = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [mousePos, setMousePos] = useState({
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
+  });
 
   return (
     <section
@@ -13,13 +16,12 @@ const HeroSection = () => {
     >
       {/* Gradient ball following cursor */}
       <motion.div
-        className="absolute w-64 h-64 rounded-full opacity-20 pointer-events-none blur-3xl"
+        className="absolute w-64 h-64 rounded-full opacity-30 pointer-events-none blur-3xl"
         style={{
-          background:
-            "radial-gradient(circle at center, #fff, #0000ff, #fff)",
+          background: "radial-gradient(circle at center, #fff, #0000ff, #fff)",
         }}
         animate={{ x: mousePos.x - 128, y: mousePos.y - 256 }}
-        transition={{ type: "spring", stiffness: 150, damping: 100 }}
+        transition={{ type: "spring", stiffness: 150, damping: 60 }}
       />
 
       {/* Glass morph overlay */}

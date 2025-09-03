@@ -10,12 +10,13 @@ import HighlightedTextCode from "../components/showcase/HighlightedText.tsx?raw"
 import HyperTextCode from "../components/showcase/HyperText.tsx?raw";
 import InteractiveCardCode from "../components/showcase/InteractiveCard.tsx?raw";
 import MarqueeCode from "../components/showcase/Marquee.tsx?raw";
+import MaskedTextCode from "../components/showcase/MaskedText.tsx?raw";
+import TextRevealCode from "../components/showcase/RevealText.tsx?raw";
 import ScrollNavCode from "../components/showcase/ScrollNav.tsx?raw";
 import SlideTextCode from "../components/showcase/SlideText.tsx?raw";
 import SparkleCardCode from "../components/showcase/SparkleCard.tsx?raw";
 import SuggestiveSearchCode from "../components/showcase/SuggestiveSearch.tsx?raw";
 import SwitchCode from "../components/showcase/Switch.tsx?raw";
-import MaskedTextCode from "../components/showcase/MaskedText.tsx?raw";
 import VideoMaskedTextCode from "../components/showcase/VideoMaskedText.tsx?raw";
 
 export const getComponentCode = (id: string) => {
@@ -73,6 +74,9 @@ export const getComponentCode = (id: string) => {
 
     case COMPONENT_IDS.videoMaskedText:
       return VideoMaskedTextCode;
+
+    case COMPONENT_IDS.revealText:
+      return TextRevealCode;
 
     default:
       return "";

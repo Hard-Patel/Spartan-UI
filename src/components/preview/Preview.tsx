@@ -6,17 +6,18 @@ import { AuroraText } from "../showcase/AuroraText";
 import { HighlightedText } from "../showcase/HighlightedText";
 import { HyperTextToggle } from "../showcase/HyperText";
 import { InteractiveCard } from "../showcase/InteractiveCard";
-import { Marquee } from "../showcase/Marquee";
+import { MaskedText } from "../showcase/MaskedText";
 import { SlideText } from "../showcase/SlideText";
 import { SparkleCard } from "../showcase/SparkleCard";
 import { SuggestiveSearch } from "../showcase/SuggestiveSearch";
+import { VideoMaskedText } from "../showcase/VideoMaskedText";
 import GlassCardPreview from "./GlassCardPreview";
+import { Marquee } from "../showcase/Marquee";
+import { ScrollNavPreview } from "./ScrollNavPreview";
 import { ScrollProgressPreviewTab } from "./ScrollProgressPreviewTab";
 import SwitchPreview from "./SwitchPreview";
+import { TextRevealPreview } from "./TextRevealPreview";
 import { UserAvatarsPreview } from "./UserAvatarsPreview";
-import { ScrollNavPreview } from "./ScrollNavPreview";
-import { MaskedText } from "../showcase/MaskedText";
-import { VideoMaskedText } from "../showcase/VideoMaskedText";
 
 export const PreviewComponent = ({
   componentId,
@@ -188,6 +189,9 @@ export const PreviewComponent = ({
           </VideoMaskedText>
         </div>
       );
+
+    case "reveal-text":
+      return <TextRevealPreview />;
 
     default:
       return (
