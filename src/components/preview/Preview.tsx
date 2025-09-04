@@ -175,9 +175,9 @@ export const PreviewComponent = ({
     case "masked-text":
       return (
         <MaskedText
-          text="Beutiful"
+          text="Beautiful"
           imageUrl="https://spartan-ui-lib.s3.ap-south-1.amazonaws.com/colorful-abstract"
-          className="text-8xl text-center"
+          className="text-3xl md:text-5xl lg:text-6xl xl:text-8xl text-center"
         />
       );
 

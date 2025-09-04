@@ -22,7 +22,9 @@ export function ScrollProgressPreviewTab({
 
       <div className="p-4 space-y-6">
         <section className="p-8 bg-secondary">
-          <h1 className="text-4xl font-bold mb-4">Scroll, Scroll, Scroll 🚀</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+            Scroll inside this container 🚀
+          </h1>
           <p className="text-lg max-w-xl">
             Build, grow, and scale your projects with ease. Our tools help you
             focus on creating while we handle the complexity.
