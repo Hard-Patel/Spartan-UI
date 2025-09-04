@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
+import { InteractiveGrid } from "../common/InteractiveGrid";
 
 const HeroSection = () => {
   const [mousePos, setMousePos] = useState({
@@ -14,19 +15,6 @@ const HeroSection = () => {
       className="relative flex items-center overflow-hidden h-[90vh]"
       onMouseMove={(e) => setMousePos({ x: e.clientX, y: e.clientY - 72 })}
     >
-      {/* Gradient ball following cursor */}
-      <motion.div
-        className="absolute w-64 h-64 rounded-full opacity-30 pointer-events-none blur-3xl"
-        style={{
-          background: "radial-gradient(circle at center, #fff, #0000ff, #fff)",
-        }}
-        animate={{ x: mousePos.x - 128, y: mousePos.y - 256 }}
-        transition={{ type: "spring", stiffness: 150, damping: 60 }}
-      />
-
-      {/* Glass morph overlay */}
-      <div className="absolute inset-0 backdrop-blur-xl bg-background/30 z-0" />
-
       {/* Hero content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
         <div className="text-center space-y-8">
@@ -67,7 +55,7 @@ const HeroSection = () => {
       </div>
 
       {/* Animated glowing grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:60px_60px] animate-grid-pan [mask-image:radial-gradient(circle_at_center,white,transparent_80%)]" />
+      <InteractiveGrid />
     </section>
   );
 };
