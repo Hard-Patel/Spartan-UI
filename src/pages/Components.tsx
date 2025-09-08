@@ -42,23 +42,10 @@ const Components = () => {
                           {component.description}
                         </p>
                       </div>
-                      <span className="px-2 py-1 text-xs bg-muted rounded-md text-muted-foreground">
+                      {/* <span className="px-2 py-1 text-xs bg-muted rounded-md text-muted-foreground">
                         {component.category}
-                      </span>
+                      </span> */}
                     </div>
-
-                    {component.dependencies && (
-                      <div className="flex gap-2">
-                        {component.dependencies.map((dep) => (
-                          <span
-                            key={dep}
-                            className="px-2 py-1 text-xs bg-primary/10 text-primary rounded-md"
-                          >
-                            {dep}
-                          </span>
-                        ))}
-                      </div>
-                    )}
                   </div>
                 </div>
               ))}

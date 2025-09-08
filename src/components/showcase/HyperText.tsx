@@ -23,7 +23,7 @@ interface HyperTextToggleProps {
 
 const HyperTextToggle = ({
   texts,
-  transitionDurationMs = 60,
+  transitionDurationMs = 100,
   holdDurationMs = 2500,
 }: HyperTextToggleProps) => {
   const maxRoleLength = texts.reduce((acc, text) => {

@@ -16,6 +16,7 @@ export const Navigation = ({ className }: NavigationProps) => {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/components", label: "Components" },
+    { href: "/templates", label: "Templates" },
   ];
 
   return (

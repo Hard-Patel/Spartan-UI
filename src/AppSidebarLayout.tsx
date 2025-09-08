@@ -7,7 +7,7 @@ export const AppSidebarLayout: React.FC = () => {
     <div className="flex flex-1 md:px-8">
       <Sidebar />
       {/* main becomes the scroll container for content */}
-      <main className="px-6 h-full pb-8">
+      <main className="px-3 sm:px-6 h-full pb-8 w-full">
         <Outlet />
       </main>
     </div>

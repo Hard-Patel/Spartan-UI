@@ -3,7 +3,7 @@ import { ChevronRight, X } from "lucide-react";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import './sidebar.css';
+import "./sidebar.css";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,7 +60,7 @@ const Sidebar = () => {
   return (
     <>
       {/* Desktop Sidebar Container */}
-      <div className="hidden md:block sticky top-[var(--header-height)] h-[calc(100vh-var(--header-height))] w-80">
+      <div className="hidden md:block sticky top-[var(--header-height)] h-[calc(100vh-var(--header-height))] w-96">
         <aside className="h-full border-r bg-background">
           <div className="px-2 md:px-4 xl:px-6 py-4 h-full overflow-y-auto sidebar-scroll space-y-6">
             <div>

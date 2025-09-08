@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 
@@ -9,9 +10,14 @@ type BreadcrumbItem = {
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
   shouldAnimate?: boolean;
+  className: string;
 }
 
-export function Breadcrumb({ items, shouldAnimate = true }: BreadcrumbProps) {
+export function Breadcrumb({
+  items,
+  className,
+  shouldAnimate = true,
+}: BreadcrumbProps) {
   return (
     <motion.nav
       initial={{ opacity: 0, y: 20 }}
@@ -19,7 +25,12 @@ export function Breadcrumb({ items, shouldAnimate = true }: BreadcrumbProps) {
       transition={{ duration: shouldAnimate ? 0.5 : 0 }}
       className="mb-8"
     >
-      <ol className="md:ml-0 ml-2.5 flex items-center space-x-2 text-sm text-muted-foreground">
+      <ol
+        className={cn(
+          className,
+          `md:ml-0 ml-2.5 flex items-center space-x-2 text-sm text-muted-foreground`
+        )}
+      >
         {items.map((item, index) => (
           <li key={index} className="flex items-center">
             {item.href ? (

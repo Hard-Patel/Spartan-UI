@@ -1,5 +1,5 @@
 import cn from "clsx";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ReactNode } from "react";
 
 type AICardProps = {

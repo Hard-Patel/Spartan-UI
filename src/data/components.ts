@@ -6,6 +6,15 @@ export interface ComponentData {
   dependencies?: string[];
   featured?: boolean;
   listed?: boolean;
+  props?: IProp[];
+  style?: string;
+}
+interface IProp {
+  name: string;
+  type: string;
+  required: boolean;
+  defaultValue: any;
+  description: string;
 }
 
 export const componentCategories = [
@@ -72,7 +81,23 @@ const rawComponentsData: ComponentData[] = [
     category: "Card",
     featured: true,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss"],
+    props: [
+      {
+        name: "children",
+        type: "React.ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "The content to be displayed inside the component",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: '""',
+        description: "Additional CSS classes to apply to the component",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.maskedText,
@@ -82,7 +107,30 @@ const rawComponentsData: ComponentData[] = [
     category: "Text",
     featured: true,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss"],
+    props: [
+      {
+        name: "text",
+        type: "string",
+        required: true,
+        defaultValue: undefined,
+        description: "The text content to be displayed with mask effect",
+      },
+      {
+        name: "imageUrl",
+        type: "string",
+        required: true,
+        defaultValue: undefined,
+        description: "URL of the image to be used as mask for the text",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Additional CSS classes to apply to the component",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.revealText,
@@ -91,7 +139,30 @@ const rawComponentsData: ComponentData[] = [
     category: "Text",
     featured: true,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss"],
+    props: [
+      {
+        name: "text",
+        type: "string[]",
+        required: false,
+        defaultValue: '["How are you?"]',
+        description: "Array of text strings to be displayed",
+      },
+      {
+        name: "duration",
+        type: "number",
+        required: false,
+        defaultValue: "80",
+        description: "Duration of the animation or effect",
+      },
+      {
+        name: "textClassName",
+        type: "string",
+        required: false,
+        defaultValue: '"text-4xl font-semibold"',
+        description: "CSS classes to apply to the text element",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.videoMaskedText,
@@ -101,7 +172,58 @@ const rawComponentsData: ComponentData[] = [
     category: "Text",
     featured: true,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss"],
+    props: [
+      {
+        name: "src",
+        type: "string",
+        required: true,
+        defaultValue: undefined,
+        description: "The video source URL",
+      },
+      {
+        name: "children",
+        type: "React.ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "The text that will reveal the video",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Extra Tailwind classes",
+      },
+      {
+        name: "fontSize",
+        type: "string | number",
+        required: false,
+        defaultValue: '"20vw"',
+        description: "Font size for the masked text",
+      },
+      {
+        name: "fontWeight",
+        type: "string | number",
+        required: false,
+        defaultValue: '"bold"',
+        description: "Font weight",
+      },
+      {
+        name: "fontFamily",
+        type: "string",
+        required: false,
+        defaultValue: '"sans-serif"',
+        description: "Font family",
+      },
+      {
+        name: "as",
+        type: "ElementType",
+        required: false,
+        defaultValue: '"div"',
+        description: "Wrapper element type",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.aiCard,
@@ -111,7 +233,51 @@ const rawComponentsData: ComponentData[] = [
     category: "Card",
     featured: true,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "children",
+        type: "React.ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "The content to be displayed inside the card",
+      },
+      {
+        name: "gradient",
+        type: "string[]",
+        required: false,
+        defaultValue: '["#ff00ff", "#00ffff", "#ff9900", "#ff00ff"]',
+        description: "Gradient colors for border",
+      },
+      {
+        name: "rounded",
+        type: "string",
+        required: false,
+        defaultValue: '""',
+        description: "Border radius",
+      },
+      {
+        name: "animate",
+        type: "boolean",
+        required: false,
+        defaultValue: "false",
+        description: "Whether gradient should animate",
+      },
+      {
+        name: "duration",
+        type: "number",
+        required: false,
+        defaultValue: "6",
+        description: "Speed of animation in seconds",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Extra class names for wrapper",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.scrollNav,
@@ -121,7 +287,23 @@ const rawComponentsData: ComponentData[] = [
     category: "Scrollbar",
     featured: false,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "sections",
+        type: "Section[]",
+        required: true,
+        defaultValue: undefined,
+        description: "Array of sections to navigate through",
+      },
+      {
+        name: "headerOffset",
+        type: "number",
+        required: false,
+        defaultValue: "-72",
+        description: "Offset for header when scrolling to sections",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.animatedButton,
@@ -130,7 +312,45 @@ const rawComponentsData: ComponentData[] = [
     category: "Buttons",
     featured: false,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    style: `--glow-shadow: 0 0 40px hsl(262 83% 58% / 0.3);`,
+    props: [
+      {
+        name: "children",
+        type: "React.ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "The content to be displayed inside the button",
+      },
+      {
+        name: "variant",
+        type: '"primary" | "secondary" | "outline"',
+        required: false,
+        defaultValue: undefined,
+        description: "Visual style variant of the button",
+      },
+      {
+        name: "size",
+        type: '"sm" | "md" | "lg"',
+        required: false,
+        defaultValue: undefined,
+        description: "Size of the button",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Additional CSS classes to apply to the button",
+      },
+      {
+        name: "onClick",
+        type: "() => void",
+        required: false,
+        defaultValue: undefined,
+        description: "Callback function triggered when the button is clicked",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.marquee,
@@ -140,7 +360,44 @@ const rawComponentsData: ComponentData[] = [
     category: "Animations",
     featured: false,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "children",
+        type: "React.ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "The content to be displayed in the marquee",
+      },
+      {
+        name: "speed",
+        type: "number",
+        required: false,
+        defaultValue: undefined,
+        description: "Speed of the marquee animation",
+      },
+      {
+        name: "direction",
+        type: '"left" | "right"',
+        required: false,
+        defaultValue: undefined,
+        description: "Direction of the marquee movement",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Additional CSS classes to apply to the marquee",
+      },
+      {
+        name: "pauseOnHover",
+        type: "boolean",
+        required: false,
+        defaultValue: undefined,
+        description: "Whether to pause the marquee animation on hover",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.highlightedText,
@@ -149,7 +406,37 @@ const rawComponentsData: ComponentData[] = [
     category: "Text Effects",
     featured: false,
     listed: false,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "children",
+        type: "React.ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "The text content to be highlighted",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Additional CSS classes to apply to the component",
+      },
+      {
+        name: "highlightColor",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Color for the highlight effect",
+      },
+      {
+        name: "delay",
+        type: "number",
+        required: false,
+        defaultValue: undefined,
+        description: "Delay before the highlight animation starts",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.interactiveCard,
@@ -158,7 +445,23 @@ const rawComponentsData: ComponentData[] = [
     category: "Cards",
     featured: false,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "children",
+        type: "React.ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "The content to be displayed inside the interactive card",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Additional CSS classes to apply to the card",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.userAvatars,
@@ -168,7 +471,72 @@ const rawComponentsData: ComponentData[] = [
     category: "Avatars",
     featured: true,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "users",
+        type: "User[]",
+        required: true,
+        defaultValue: undefined,
+        description: "List of users with id, name, and image",
+      },
+      {
+        name: "size",
+        type: "number | string",
+        required: false,
+        defaultValue: "56",
+        description: "Avatar size in px",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Extra classNames for container",
+      },
+      {
+        name: "maxVisible",
+        type: "number",
+        required: false,
+        defaultValue: "7",
+        description: "Max number of visible avatars before showing +X bubble",
+      },
+      {
+        name: "overlap",
+        type: "number",
+        required: false,
+        defaultValue: "60",
+        description: "Overlap percentage between avatars",
+      },
+      {
+        name: "focusScale",
+        type: "number",
+        required: false,
+        defaultValue: "1.2",
+        description: "Hover scale factor",
+      },
+      {
+        name: "isRightToLeft",
+        type: "boolean",
+        required: false,
+        defaultValue: "false",
+        description: "Display avatars from right to left",
+      },
+      {
+        name: "isOverlapOnly",
+        type: "boolean",
+        required: false,
+        defaultValue: "false",
+        description: "Only overlap avatars, no shifting on hover",
+      },
+      {
+        name: "tooltipPlacement",
+        type: '"top" | "bottom"',
+        required: false,
+        defaultValue: '"bottom"',
+        description: "Tooltip placement",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.animatedThemeToggle,
@@ -178,7 +546,30 @@ const rawComponentsData: ComponentData[] = [
     category: "Theme Toggle",
     featured: false,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Additional CSS classes to apply to the component",
+      },
+      {
+        name: "DarkIcon",
+        type: 'ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>',
+        required: false,
+        defaultValue: "Sun",
+        description: "Icon component to display in dark mode",
+      },
+      {
+        name: "LightIcon",
+        type: 'ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>',
+        required: false,
+        defaultValue: "Moon",
+        description: "Icon component to display in light mode",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.suggestiveSearch,
@@ -187,7 +578,103 @@ const rawComponentsData: ComponentData[] = [
     category: "Search",
     featured: true,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "onChange",
+        type: "(val: string) => void",
+        required: false,
+        defaultValue: undefined,
+        description: "Callback function triggered when the input value changes",
+      },
+      {
+        name: "suggestions",
+        type: "string[]",
+        required: false,
+        defaultValue:
+          '["Search your favourite movie", "Search user from connection"]',
+        description: "Array of suggestion strings to display",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Additional CSS classes to apply to the component",
+      },
+      {
+        name: "Leading",
+        type: "() => JSX.Element",
+        required: false,
+        defaultValue:
+          '() => <Search className="size-4 text-muted-foreground" />',
+        description: "Component to render a leading icon or element",
+      },
+      {
+        name: "showLeading",
+        type: "boolean",
+        required: false,
+        defaultValue: "true",
+        description: "Show or hide the leading icon",
+      },
+      {
+        name: "Trailing",
+        type: "() => JSX.Element",
+        required: false,
+        defaultValue:
+          '() => <Search className="size-4 text-muted-foreground" />',
+        description: "Component to render a trailing icon or element",
+      },
+      {
+        name: "showTrailing",
+        type: "boolean",
+        required: false,
+        defaultValue: "false",
+        description: "Show or hide the trailing icon",
+      },
+      {
+        name: "effect",
+        type: '"typewriter" | "slide" | "fade" | "none"',
+        required: false,
+        defaultValue: '"typewriter"',
+        description: "Convenience selection of built-in effects",
+      },
+      {
+        name: "EffectComponent",
+        type: "React.ComponentType<EffectRendererProps>",
+        required: false,
+        defaultValue: undefined,
+        description: "Override with a custom Effect component",
+      },
+      {
+        name: "typeDurationMs",
+        type: "number",
+        required: false,
+        defaultValue: "500",
+        description: "Duration in milliseconds for typing animation",
+      },
+      {
+        name: "deleteDurationMs",
+        type: "number",
+        required: false,
+        defaultValue: "300",
+        description: "Duration in milliseconds for deleting animation",
+      },
+      {
+        name: "pauseAfterTypeMs",
+        type: "number",
+        required: false,
+        defaultValue: "1500",
+        description: "Pause duration after typing animation completes",
+      },
+      {
+        name: "animateMode",
+        type: '"infinite" | "once"',
+        required: false,
+        defaultValue: '"infinite"',
+        description: "Play suggestions forever or only once",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.hyperText,
@@ -197,7 +684,31 @@ const rawComponentsData: ComponentData[] = [
     category: "Text",
     featured: false,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss"],
+    props: [
+      {
+        name: "texts",
+        type: "string[]",
+        required: true,
+        defaultValue: undefined,
+        description: "Array of text strings to toggle between",
+      },
+      {
+        name: "transitionDurationMs",
+        type: "number",
+        required: false,
+        defaultValue: "60",
+        description: "Scramble frame interval in milliseconds (default: 60ms)",
+      },
+      {
+        name: "holdDurationMs",
+        type: "number",
+        required: false,
+        defaultValue: "2500",
+        description:
+          "Hold readable text duration in milliseconds before scrambling (default: 2500ms)",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.slideText,
@@ -207,7 +718,46 @@ const rawComponentsData: ComponentData[] = [
     category: "Text",
     featured: false,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "texts",
+        type: "string[]",
+        required: true,
+        defaultValue: undefined,
+        description: "Array of text strings to slide",
+      },
+      {
+        name: "delay",
+        type: "number",
+        required: false,
+        defaultValue: "2000",
+        description:
+          "Delay in milliseconds between slide transitions (default: 2000)",
+      },
+      {
+        name: "loop",
+        type: "boolean",
+        required: false,
+        defaultValue: "true",
+        description:
+          "Whether to loop the sliding text infinitely (default: true)",
+      },
+      {
+        name: "direction",
+        type: '"up" | "down"',
+        required: false,
+        defaultValue: '"up"',
+        description: "Slide direction (up or down)",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Additional CSS classes to apply to the component",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.auroraText,
@@ -217,7 +767,39 @@ const rawComponentsData: ComponentData[] = [
     category: "Text",
     featured: true,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "text",
+        type: "string",
+        required: true,
+        defaultValue: undefined,
+        description: "The text content to display with the aurora effect",
+      },
+      {
+        name: "type",
+        type: "AuroraType",
+        required: false,
+        defaultValue: '"always"',
+        description:
+          '"always" = animation runs continuously; "hover" = animation only on hover',
+      },
+      {
+        name: "gradient",
+        type: "string",
+        required: false,
+        defaultValue: '"from-primary-foreground via-yellow-500 to-pink-500"',
+        description:
+          "Gradient stop classes for the text effect (without the `bg-gradient-to-r` prefix)",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Additional CSS classes to apply to the component",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.scrollProgress,
@@ -227,7 +809,37 @@ const rawComponentsData: ComponentData[] = [
     category: "Scroll",
     featured: false,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "targetRef",
+        type: "RefObject<HTMLElement>",
+        required: false,
+        defaultValue: undefined,
+        description: "Ref of the scrollable container",
+      },
+      {
+        name: "size",
+        type: "number",
+        required: false,
+        defaultValue: "3",
+        description: "Thickness of the progress bar",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Additional CSS classes for styling",
+      },
+      {
+        name: "position",
+        type: "Position",
+        required: false,
+        defaultValue: '"top"',
+        description: "Position of the progress bar (e.g., top, bottom)",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.switch,
@@ -236,7 +848,44 @@ const rawComponentsData: ComponentData[] = [
     category: "Switch",
     featured: false,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "value",
+        type: "boolean",
+        required: true,
+        defaultValue: undefined,
+        description: "Current state of the switch (on/off)",
+      },
+      {
+        name: "onToggle",
+        type: "() => void",
+        required: true,
+        defaultValue: undefined,
+        description: "Callback function triggered when the switch is toggled",
+      },
+      {
+        name: "iconOn",
+        type: "ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "Icon to display when the switch is ON",
+      },
+      {
+        name: "iconOff",
+        type: "ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "Icon to display when the switch is OFF",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: undefined,
+        description: "Additional CSS classes to apply to the switch component",
+      },
+    ],
   },
   {
     id: COMPONENT_IDS.sparkleCard,
@@ -246,7 +895,67 @@ const rawComponentsData: ComponentData[] = [
     category: "Card",
     featured: false,
     listed: true,
-    dependencies: ["motion/react"],
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "children",
+        type: "React.ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "The content to be displayed inside the card",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: '""',
+        description: "Additional CSS classes to apply to the card container",
+      },
+      {
+        name: "sparkleIntensity",
+        type: '"low" | "medium" | "high"',
+        required: false,
+        defaultValue: '"medium"',
+        description: "Controls the intensity and frequency of sparkle effects",
+      },
+      {
+        name: "sparkleColor",
+        type: "string",
+        required: false,
+        defaultValue: '"#ffffff"',
+        description: "Hex color code for the sparkle particles",
+      },
+      {
+        name: "disabled",
+        type: "boolean",
+        required: false,
+        defaultValue: "false",
+        description:
+          "When true, disables the sparkle animation and interaction",
+      },
+      {
+        name: "onClick",
+        type: "(event: MouseEvent) => void",
+        required: false,
+        defaultValue: "undefined",
+        description: "Callback function triggered when the card is clicked",
+      },
+      {
+        name: "animationDuration",
+        type: "number",
+        required: false,
+        defaultValue: "2000",
+        description: "Duration of one sparkle animation cycle in milliseconds",
+      },
+      {
+        name: "variant",
+        type: '"default" | "glass" | "neon"',
+        required: false,
+        defaultValue: '"default"',
+        description:
+          "Visual variant of the card affecting background and border styles",
+      },
+    ],
   },
 ];
 

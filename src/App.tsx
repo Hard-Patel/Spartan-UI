@@ -9,6 +9,7 @@ import ComponentDetail from "./pages/ComponentDetail";
 import Components from "./pages/Components";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import { Templates } from "./pages/Templates";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
             <Route element={<AppSidebarLayout />}>
               <Route path="/components" element={<Components />} />
               <Route path="/components/:id" element={<ComponentDetail />} />
+              <Route path="/templates" element={<Templates />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             </Route>
             <Route path="*" element={<NotFound />} />

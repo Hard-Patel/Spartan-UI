@@ -27,7 +27,7 @@ const CharacterReveal = ({ isAnimating = false, char, delay }) => {
 };
 
 const TextReveal = ({
-  text = ["Unlock Your Team's Potential"],
+  text = ["How are you?"],
   duration = 80,
   textClassName = "text-4xl font-semibold",
 }) => {
