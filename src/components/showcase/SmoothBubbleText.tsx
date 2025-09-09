@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 import { useRef, useState } from "react";
 
 export const SmoothBubbleText = ({
@@ -47,21 +48,28 @@ export const SmoothBubbleText = ({
           {text}
         </div>
 
-        {/* Bubble with blend mode */}
-        <div
-          className={`absolute pointer-events-none rounded-full transition-opacity duration-200 ease-out ${
-            isHovering ? "opacity-100" : "opacity-0"
-          }`}
-          style={{
-            left: mousePosition.x - bubbleSize / 2,
-            top: mousePosition.y - bubbleSize / 2,
-            width: bubbleSize,
-            height: bubbleSize,
-            backgroundColor: "white",
-            mixBlendMode: "difference",
-            zIndex: 20,
-          }}
-        />
+        {/* Bubble with smooth animation using framer-motion */}
+        {isHovering && (
+          <motion.div
+            animate={{
+              left: mousePosition.x - bubbleSize / 2,
+              top: mousePosition.y - bubbleSize / 2,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 450,
+              damping: 100,
+            }}
+            className="absolute pointer-events-none rounded-full"
+            style={{
+              width: bubbleSize,
+              height: bubbleSize,
+              backgroundColor: "white",
+              mixBlendMode: "difference",
+              zIndex: 20,
+            }}
+          />
+        )}
       </div>
     </div>
   );
