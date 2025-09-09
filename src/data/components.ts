@@ -30,6 +30,7 @@ export const componentCategories = [
 export const COMPONENT_IDS = {
   bubbleText: "bubble-text",
   glassCard: "glass-card",
+  card3D: "3d-card",
   typewriterText: "typewriter-text",
   aiCard: "ai-card",
   scrollNav: "scroll-nav",
@@ -57,6 +58,7 @@ export const COMPONENT_ORDER = [
   COMPONENT_IDS.aiCard,
   COMPONENT_IDS.sparkleCard,
   COMPONENT_IDS.glassCard,
+  COMPONENT_IDS.card3D,
   COMPONENT_IDS.revealText,
   COMPONENT_IDS.userAvatars,
   COMPONENT_IDS.suggestiveSearch,
@@ -80,6 +82,59 @@ export const COMPONENT_ORDER = [
 
 // 3. Raw components data (same as you already have)
 const rawComponentsData: ComponentData[] = [
+  {
+    id: COMPONENT_IDS.card3D,
+    name: "Card 3D",
+    description: "Card component which gives 3d like effect on hover",
+    category: "Card",
+    featured: true,
+    listed: true,
+    dependencies: ["tailwindcss", "motion/react"],
+    props: [
+      {
+        name: "children",
+        type: "React.ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "Content to display inside the tilt card",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: '""',
+        description: "Additional CSS classes to apply to the tilt card",
+      },
+      {
+        name: "intensity",
+        type: "number",
+        required: false,
+        defaultValue: "15",
+        description: "Tilt intensity in degrees",
+      },
+      {
+        name: "scale",
+        type: "number",
+        required: false,
+        defaultValue: "1.05",
+        description: "Scale factor when hovered",
+      },
+      {
+        name: "glareEffect",
+        type: "boolean",
+        required: false,
+        defaultValue: "true",
+        description: "Whether to show glare effect on tilt",
+      },
+      {
+        name: "shadowEffect",
+        type: "boolean",
+        required: false,
+        defaultValue: "true",
+        description: "Whether to show shadow effect on tilt",
+      },
+    ],
+  },
   {
     id: COMPONENT_IDS.cursorAwareButton,
     name: "Cursor Aware Button",

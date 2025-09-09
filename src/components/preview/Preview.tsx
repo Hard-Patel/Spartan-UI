@@ -3,6 +3,7 @@ import AICard from "../showcase/AICard";
 import { AnimatedButton } from "../showcase/AnimatedButton";
 import { AnimatedThemeToggle } from "../showcase/AnimatedThemeToggler";
 import { AuroraText } from "../showcase/AuroraText";
+import { Card3D } from "../showcase/Card3D";
 import { CursorAwareButton } from "../showcase/CursorAwareButton";
 import { HighlightedText } from "../showcase/HighlightedText";
 import { HyperTextToggle } from "../showcase/HyperText";
@@ -235,6 +236,37 @@ export const PreviewComponent = ({
           text="Hello, how are you?"
           className="text-2xl"
         />
+      );
+
+    case COMPONENT_IDS.card3D:
+      return (
+        <Card3D
+          glareEffect={false}
+          className="w-80 h-72"
+          intensity={12}
+          scale={1.03}
+        >
+          <div className="bg-muted rounded-xl h-full flex flex-col overflow-hidden">
+            <div className="h-32 bg-background/10 flex items-center justify-center text-6xl">
+              {"📱"}
+            </div>
+            <div className="p-6 flex-1 flex flex-col">
+              <h3 className="text-xl font-bold text-white mb-2">
+                Smartphone Pro
+              </h3>
+              <p className="text-white/60 text-sm flex-1 mb-4">
+                Latest flagship smartphone with advanced AI camera and
+                lightning-fast performance
+              </p>
+              <div className="flex items-center justify-between">
+                <span className="text-2xl font-bold text-green-600">$1299</span>
+                <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </Card3D>
       );
 
     default:
