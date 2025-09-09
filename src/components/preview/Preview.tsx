@@ -12,6 +12,7 @@ import { SlideText } from "../showcase/SlideText";
 import { SmoothBubbleText } from "../showcase/SmoothBubbleText";
 import { SparkleCard } from "../showcase/SparkleCard";
 import { SuggestiveSearch } from "../showcase/SuggestiveSearch";
+import { TypewriterText } from "../showcase/TypewriterText";
 import { VideoMaskedText } from "../showcase/VideoMaskedText";
 import GlassCardPreview from "./GlassCardPreview";
 import { ScrollNavPreview } from "./ScrollNavPreview";
@@ -199,6 +200,17 @@ export const PreviewComponent = ({
         <SmoothBubbleText
           text="Hover over me to see the effect"
           className="text-center font-extrabold text-6xl"
+        />
+      );
+
+    case COMPONENT_IDS.typewriterText:
+      return (
+        <TypewriterText
+          loop
+          withCursor
+          duration={50}
+          text="Hello, how are you?"
+          className="text-2xl"
         />
       );
 
