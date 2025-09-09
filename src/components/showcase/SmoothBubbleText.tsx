@@ -51,19 +51,25 @@ export const SmoothBubbleText = ({
         {/* Bubble with smooth animation using framer-motion */}
         {isHovering && (
           <motion.div
+            initial={{
+              left: mousePosition.x,
+              top: mousePosition.y,
+              height: 0,
+              width: 0,
+            }}
             animate={{
               left: mousePosition.x - bubbleSize / 2,
               top: mousePosition.y - bubbleSize / 2,
+              width: bubbleSize,
+              height: bubbleSize,
             }}
             transition={{
               type: "spring",
-              stiffness: 450,
+              stiffness: 600,
               damping: 100,
             }}
             className="absolute pointer-events-none rounded-full"
             style={{
-              width: bubbleSize,
-              height: bubbleSize,
               backgroundColor: "white",
               mixBlendMode: "difference",
               zIndex: 20,
