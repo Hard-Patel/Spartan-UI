@@ -45,6 +45,11 @@ const Components = () => {
                       {/* <span className="px-2 py-1 text-xs bg-muted rounded-md text-muted-foreground">
                         {component.category}
                       </span> */}
+                      {component.new && (
+                        <span className="h-fit text-xs text-primary bg-muted px-4 py-1 rounded-full">
+                          New
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>

@@ -22,6 +22,7 @@ import { ScrollProgressPreviewTab } from "./ScrollProgressPreviewTab";
 import SwitchPreview from "./SwitchPreview";
 import { TextRevealPreview } from "./TextRevealPreview";
 import { UserAvatarsPreview } from "./UserAvatarsPreview";
+import { FocusedText } from "../showcase/FocusedText";
 
 export const PreviewComponent = ({
   componentId,
@@ -121,7 +122,7 @@ export const PreviewComponent = ({
 
     case COMPONENT_IDS.auroraText:
       return (
-        <span className="text-5xl font-extrabold">
+        <span className="text-5xl text-center font-extrabold">
           Normal Text v
           <AuroraText text="s Aurora Text" />
         </span>
@@ -267,6 +268,17 @@ export const PreviewComponent = ({
             </div>
           </div>
         </Card3D>
+      );
+
+    case COMPONENT_IDS.focusedText:
+      return (
+        <FocusedText
+          fontSize="text-4xl"
+          fontWeight="font-bold"
+          direction="up"
+        >
+          Hover and Check Slide
+        </FocusedText>
       );
 
     default:

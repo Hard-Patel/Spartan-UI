@@ -8,6 +8,7 @@ export interface ComponentData {
   listed?: boolean;
   props?: IProp[];
   style?: string;
+  new?: boolean;
 }
 interface IProp {
   name: string;
@@ -29,6 +30,7 @@ export const componentCategories = [
 // 1. Define component IDs as const
 export const COMPONENT_IDS = {
   bubbleText: "bubble-text",
+  focusedText: "focused-text",
   glassCard: "glass-card",
   card3D: "3d-card",
   typewriterText: "typewriter-text",
@@ -70,6 +72,7 @@ export const COMPONENT_ORDER = [
   COMPONENT_IDS.cursorAwareButton,
   COMPONENT_IDS.animatedThemeToggle,
   COMPONENT_IDS.auroraText,
+  COMPONENT_IDS.focusedText,
   COMPONENT_IDS.typewriterText,
   COMPONENT_IDS.interactiveCard,
   COMPONENT_IDS.switch,
@@ -83,12 +86,89 @@ export const COMPONENT_ORDER = [
 // 3. Raw components data (same as you already have)
 const rawComponentsData: ComponentData[] = [
   {
+    id: COMPONENT_IDS.focusedText,
+    name: "Focused Text",
+    description:
+      "Focus effect on hover for the text or children component from the wrapper",
+    category: "Text",
+    featured: true,
+    listed: true,
+    dependencies: ["tailwindcss", "motion/react"],
+    new: true,
+    props: [
+      {
+        name: "children",
+        type: "React.ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "Text content to animate",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: '""',
+        description: "Additional CSS classes to apply to the animated text",
+      },
+      {
+        name: "textColor",
+        type: "string",
+        required: false,
+        defaultValue: '"text-white"',
+        description: "Text color when not hovered",
+      },
+      {
+        name: "hoverTextColor",
+        type: "string",
+        required: false,
+        defaultValue: '""',
+        description: "Text color on hover",
+      },
+      {
+        name: "fontSize",
+        type: "string",
+        required: false,
+        defaultValue: '"text-base"',
+        description: "Font size utility class",
+      },
+      {
+        name: "fontWeight",
+        type: "string",
+        required: false,
+        defaultValue: '"font-medium"',
+        description: "Font weight utility class",
+      },
+      {
+        name: "duration",
+        type: "number",
+        required: false,
+        defaultValue: "0.3",
+        description: "Animation duration in seconds",
+      },
+      {
+        name: "direction",
+        type: '"up" | "down" | "left" | "right"',
+        required: false,
+        defaultValue: '"up"',
+        description: "Direction of text animation",
+      },
+      {
+        name: "ease",
+        type: "number[]",
+        required: false,
+        defaultValue: "[0.25, 0.1, 0.25, 1]",
+        description: "Easing function array for the animation",
+      },
+    ],
+  },
+  {
     id: COMPONENT_IDS.card3D,
     name: "Card 3D",
     description: "Card component which gives 3d like effect on hover",
     category: "Card",
     featured: true,
     listed: true,
+    new: true,
     dependencies: ["tailwindcss", "motion/react"],
     props: [
       {
@@ -142,6 +222,7 @@ const rawComponentsData: ComponentData[] = [
     category: "Button",
     featured: true,
     listed: true,
+    new: true,
     dependencies: ["tailwindcss"],
     props: [
       {
@@ -232,6 +313,7 @@ const rawComponentsData: ComponentData[] = [
     category: "Text",
     featured: true,
     listed: true,
+    new: true,
     dependencies: ["tailwindcss"],
     props: [
       {
@@ -323,6 +405,7 @@ const rawComponentsData: ComponentData[] = [
     category: "Text",
     featured: true,
     listed: true,
+    new: true,
     dependencies: ["tailwindcss"],
     props: [
       {
@@ -370,6 +453,7 @@ const rawComponentsData: ComponentData[] = [
     category: "Text",
     featured: true,
     listed: true,
+    new: true,
     dependencies: ["tailwindcss"],
     props: [
       {

@@ -79,7 +79,12 @@ const Sidebar = () => {
                     }`}
                     onClick={() => navigate(`/components/${component.id}`)}
                   >
-                    {component.name}
+                    <div className="flex justify-between">
+                      <span>{component.name}</span>
+                      {component.new && <div className="h-fit text-[9px] text-primary bg-muted px-2 rounded-full">
+                        New
+                      </div>}
+                    </div>
                   </button>
                 ))}
               </div>

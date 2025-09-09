@@ -6,6 +6,9 @@ import AnimatedButtonCode from "../components/showcase/AnimatedButton.tsx?raw";
 import AnimatedThemeToggleCode from "../components/showcase/AnimatedThemeToggler.tsx?raw";
 import UserAvatarsCode from "../components/showcase/AnimatedUserAvatars.tsx?raw";
 import AuroraTextCode from "../components/showcase/AuroraText.tsx?raw";
+import Card3DCode from "../components/showcase/Card3D.tsx?raw";
+import CursorAwareButtonCode from "../components/showcase/CursorAwareButton.tsx?raw";
+import FocusedTextCode from "../components/showcase/FocusedText.tsx?raw";
 import HighlightedTextCode from "../components/showcase/HighlightedText.tsx?raw";
 import HyperTextCode from "../components/showcase/HyperText.tsx?raw";
 import InteractiveCardCode from "../components/showcase/InteractiveCard.tsx?raw";
@@ -14,9 +17,11 @@ import MaskedTextCode from "../components/showcase/MaskedText.tsx?raw";
 import TextRevealCode from "../components/showcase/RevealText.tsx?raw";
 import ScrollNavCode from "../components/showcase/ScrollNav.tsx?raw";
 import SlideTextCode from "../components/showcase/SlideText.tsx?raw";
+import SmoothBubbleTextCode from "../components/showcase/SmoothBubbleText.tsx?raw";
 import SparkleCardCode from "../components/showcase/SparkleCard.tsx?raw";
 import SuggestiveSearchCode from "../components/showcase/SuggestiveSearch.tsx?raw";
 import SwitchCode from "../components/showcase/Switch.tsx?raw";
+import TypewriterTextCode from "../components/showcase/TypewriterText.tsx?raw";
 import VideoMaskedTextCode from "../components/showcase/VideoMaskedText.tsx?raw";
 
 export const getComponentCode = (id: string) => {
@@ -77,6 +82,21 @@ export const getComponentCode = (id: string) => {
 
     case COMPONENT_IDS.revealText:
       return TextRevealCode;
+
+    case COMPONENT_IDS.focusedText:
+      return FocusedTextCode;
+
+    case COMPONENT_IDS.bubbleText:
+      return SmoothBubbleTextCode;
+
+    case COMPONENT_IDS.cursorAwareButton:
+      return CursorAwareButtonCode;
+
+    case COMPONENT_IDS.typewriterText:
+      return TypewriterTextCode;
+
+    case COMPONENT_IDS.card3D:
+      return Card3DCode;
 
     default:
       return "";
