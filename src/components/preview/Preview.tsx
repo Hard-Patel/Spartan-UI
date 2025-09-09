@@ -3,6 +3,7 @@ import AICard from "../showcase/AICard";
 import { AnimatedButton } from "../showcase/AnimatedButton";
 import { AnimatedThemeToggle } from "../showcase/AnimatedThemeToggler";
 import { AuroraText } from "../showcase/AuroraText";
+import { CursorAwareButton } from "../showcase/CursorAwareButton";
 import { HighlightedText } from "../showcase/HighlightedText";
 import { HyperTextToggle } from "../showcase/HyperText";
 import { InteractiveCard } from "../showcase/InteractiveCard";
@@ -201,6 +202,28 @@ export const PreviewComponent = ({
           text="Hover over me to see the effect"
           className="text-center font-extrabold text-6xl"
         />
+      );
+
+    case COMPONENT_IDS.cursorAwareButton:
+      return (
+        <div className="space-x-4">
+          <CursorAwareButton
+            borderColor="border-black"
+            rounded="rounded-full"
+            onClick={() => null}
+          >
+            Rounded with Border
+          </CursorAwareButton>
+          <CursorAwareButton
+            borderColor="border-0 border-transparent"
+            hoverColor="bg-red-800"
+            hoverTextColor="text-white"
+            rounded="rounded-md"
+            onClick={() => null}
+          >
+            Square without Border
+          </CursorAwareButton>
+        </div>
       );
 
     case COMPONENT_IDS.typewriterText:
