@@ -28,6 +28,7 @@ export const componentCategories = [
 
 // 1. Define component IDs as const
 export const COMPONENT_IDS = {
+  bubbleText: "bubble-text",
   glassCard: "glass-card",
   aiCard: "ai-card",
   scrollNav: "scroll-nav",
@@ -60,6 +61,7 @@ export const COMPONENT_ORDER = [
   COMPONENT_IDS.scrollProgress,
   COMPONENT_IDS.scrollNav,
   COMPONENT_IDS.videoMaskedText,
+  COMPONENT_IDS.bubbleText,
   COMPONENT_IDS.maskedText,
   COMPONENT_IDS.animatedThemeToggle,
   COMPONENT_IDS.auroraText,
@@ -74,6 +76,39 @@ export const COMPONENT_ORDER = [
 
 // 3. Raw components data (same as you already have)
 const rawComponentsData: ComponentData[] = [
+  {
+    id: COMPONENT_IDS.bubbleText,
+    name: "Bubble Text",
+    description:
+      "Bubble text is a lens like view which shows an inverted things through the bubble",
+    category: "Text",
+    featured: true,
+    listed: true,
+    dependencies: ["tailwindcss"],
+    props: [
+      {
+        name: "text",
+        type: "string",
+        required: false,
+        defaultValue: '"The digital marketing agency"',
+        description: "Text content to display inside the bubble",
+      },
+      {
+        name: "bubbleSize",
+        type: "number",
+        required: false,
+        defaultValue: "120",
+        description: "Size of the bubble in pixels (width and height)",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: '""',
+        description: "Additional CSS classes to apply to the bubble component",
+      },
+    ],
+  },
   {
     id: COMPONENT_IDS.glassCard,
     name: "Glass Card",

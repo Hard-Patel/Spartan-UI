@@ -6,13 +6,14 @@ import { AuroraText } from "../showcase/AuroraText";
 import { HighlightedText } from "../showcase/HighlightedText";
 import { HyperTextToggle } from "../showcase/HyperText";
 import { InteractiveCard } from "../showcase/InteractiveCard";
+import { Marquee } from "../showcase/Marquee";
 import { MaskedText } from "../showcase/MaskedText";
 import { SlideText } from "../showcase/SlideText";
+import { SmoothBubbleText } from "../showcase/SmoothBubbleText";
 import { SparkleCard } from "../showcase/SparkleCard";
 import { SuggestiveSearch } from "../showcase/SuggestiveSearch";
 import { VideoMaskedText } from "../showcase/VideoMaskedText";
 import GlassCardPreview from "./GlassCardPreview";
-import { Marquee } from "../showcase/Marquee";
 import { ScrollNavPreview } from "./ScrollNavPreview";
 import { ScrollProgressPreviewTab } from "./ScrollProgressPreviewTab";
 import SwitchPreview from "./SwitchPreview";
@@ -192,6 +193,14 @@ export const PreviewComponent = ({
 
     case "reveal-text":
       return <TextRevealPreview />;
+
+    case COMPONENT_IDS.bubbleText:
+      return (
+        <SmoothBubbleText
+          text="Hover over me to see the effect"
+          className="text-center font-extrabold text-6xl"
+        />
+      );
 
     default:
       return (
