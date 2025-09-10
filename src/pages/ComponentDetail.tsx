@@ -47,7 +47,7 @@ const ComponentDetail = () => {
             <Breadcrumb
               items={[
                 { label: "Components", href: "/components" },
-                { label: "Animated Button" }, // no href → treated as current page
+                { label: component.name }, // no href → treated as current page
               ]}
             />
 

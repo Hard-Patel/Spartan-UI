@@ -5,6 +5,7 @@ import { AnimatedThemeToggle } from "../showcase/AnimatedThemeToggler";
 import { AuroraText } from "../showcase/AuroraText";
 import { Card3D } from "../showcase/Card3D";
 import { CursorAwareButton } from "../showcase/CursorAwareButton";
+import { FocusedText } from "../showcase/FocusedText";
 import { HighlightedText } from "../showcase/HighlightedText";
 import { HyperTextToggle } from "../showcase/HyperText";
 import { InteractiveCard } from "../showcase/InteractiveCard";
@@ -16,13 +17,14 @@ import { SparkleCard } from "../showcase/SparkleCard";
 import { SuggestiveSearch } from "../showcase/SuggestiveSearch";
 import { TypewriterText } from "../showcase/TypewriterText";
 import { VideoMaskedText } from "../showcase/VideoMaskedText";
+import { WaterReflectionImage } from "../showcase/WaterReflectionImage";
 import GlassCardPreview from "./GlassCardPreview";
 import { ScrollNavPreview } from "./ScrollNavPreview";
 import { ScrollProgressPreviewTab } from "./ScrollProgressPreviewTab";
 import SwitchPreview from "./SwitchPreview";
 import { TextRevealPreview } from "./TextRevealPreview";
 import { UserAvatarsPreview } from "./UserAvatarsPreview";
-import { FocusedText } from "../showcase/FocusedText";
+import { ProgressiveHoverDemo } from "./ProgressiveHoverDemo";
 
 export const PreviewComponent = ({
   componentId,
@@ -274,6 +276,9 @@ export const PreviewComponent = ({
           Hover and Check Slide
         </FocusedText>
       );
+
+    case COMPONENT_IDS.progressiveHoverCard:
+      return <ProgressiveHoverDemo isDetailsPage={isDetailedPage} />;
 
     default:
       return (

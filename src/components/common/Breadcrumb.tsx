@@ -10,12 +10,12 @@ type BreadcrumbItem = {
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
   shouldAnimate?: boolean;
-  className: string;
+  className?: string;
 }
 
 export function Breadcrumb({
   items,
-  className,
+  className = "",
   shouldAnimate = true,
 }: BreadcrumbProps) {
   return (

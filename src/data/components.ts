@@ -30,6 +30,8 @@ export const componentCategories = [
 // 1. Define component IDs as const
 export const COMPONENT_IDS = {
   bubbleText: "bubble-text",
+  waterReflectedImage: "water-reflected-image",
+  progressiveHoverCard: "progressive-hover-card",
   focusedText: "focused-text",
   glassCard: "glass-card",
   card3D: "3d-card",
@@ -63,6 +65,7 @@ export const COMPONENT_ORDER = [
   COMPONENT_IDS.card3D,
   COMPONENT_IDS.revealText,
   COMPONENT_IDS.userAvatars,
+  COMPONENT_IDS.progressiveHoverCard,
   COMPONENT_IDS.suggestiveSearch,
   COMPONENT_IDS.scrollProgress,
   COMPONENT_IDS.scrollNav,
@@ -81,10 +84,87 @@ export const COMPONENT_ORDER = [
   COMPONENT_IDS.animatedButton,
   COMPONENT_IDS.hyperText,
   COMPONENT_IDS.slideText,
+  COMPONENT_IDS.waterReflectedImage,
 ] as const;
 
 // 3. Raw components data (same as you already have)
 const rawComponentsData: ComponentData[] = [
+  {
+    id: COMPONENT_IDS.progressiveHoverCard,
+    name: "Progressive Hover Card",
+    description:
+      "Card with progresive hover effect with smooth animation",
+    category: "Card",
+    featured: true,
+    listed: true,
+    dependencies: ["tailwindcss"],
+    new: true,
+    props: [
+      {
+        name: "children",
+        type: "React.ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "Text content to animate",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: '""',
+        description: "Additional CSS classes to apply to the animated text",
+      },
+      {
+        name: "textColor",
+        type: "string",
+        required: false,
+        defaultValue: '"text-white"',
+        description: "Text color when not hovered",
+      },
+      {
+        name: "hoverTextColor",
+        type: "string",
+        required: false,
+        defaultValue: '""',
+        description: "Text color on hover",
+      },
+      {
+        name: "fontSize",
+        type: "string",
+        required: false,
+        defaultValue: '"text-base"',
+        description: "Font size utility class",
+      },
+      {
+        name: "fontWeight",
+        type: "string",
+        required: false,
+        defaultValue: '"font-medium"',
+        description: "Font weight utility class",
+      },
+      {
+        name: "duration",
+        type: "number",
+        required: false,
+        defaultValue: "0.3",
+        description: "Animation duration in seconds",
+      },
+      {
+        name: "direction",
+        type: '"up" | "down" | "left" | "right"',
+        required: false,
+        defaultValue: '"up"',
+        description: "Direction of text animation",
+      },
+      {
+        name: "ease",
+        type: "number[]",
+        required: false,
+        defaultValue: "[0.25, 0.1, 0.25, 1]",
+        description: "Easing function array for the animation",
+      },
+    ],
+  },
   {
     id: COMPONENT_IDS.focusedText,
     name: "Focused Text",

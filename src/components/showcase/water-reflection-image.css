@@ -1,0 +1,153 @@
+/* WaterReflection.css */
+.water-reflection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.original-image {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.reflection-container {
+  width: 100%;
+  height: 60%; /* Show only 60% of the original image height */
+  overflow: hidden;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.reflection-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform-origin: top center;
+  
+  /* Create the water reflection effect */
+  transform: 
+    scaleY(-1)           /* Flip vertically */
+    rotateX(15deg)       /* Tilt back for perspective */
+    scaleX(0.95);        /* Slightly narrow the width */
+  
+  /* Apply water-like effects */
+  opacity: 0.4;
+  filter: blur(2px);
+  
+  /* Mask to create fading effect */
+  mask: linear-gradient(to bottom, 
+    rgba(0,0,0,0.8) 0%, 
+    rgba(0,0,0,0.4) 50%, 
+    rgba(0,0,0,0.1) 80%,
+    rgba(0,0,0,0) 100%);
+  -webkit-mask: linear-gradient(to bottom, 
+    rgba(0,0,0,0.8) 0%, 
+    rgba(0,0,0,0.4) 50%, 
+    rgba(0,0,0,0.1) 80%,
+    rgba(0,0,0,0) 100%);
+  
+  /* Subtle animation for water movement */
+  animation: waterRipple 4s ease-in-out infinite;
+}
+
+.water-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  
+  /* Create subtle water distortion lines */
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      rgba(255,255,255,0.02) 1px,
+      transparent 2px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      rgba(255,255,255,0.01) 1px,
+      transparent 2px,
+      transparent 40px
+    );
+  
+  /* Animated water shimmer effect */
+  animation: waterShimmer 6s ease-in-out infinite;
+}
+
+@keyframes waterRipple {
+  0%, 100% {
+    transform: 
+      scaleY(-1) 
+      rotateX(15deg) 
+      scaleX(0.95) 
+      translateY(0px);
+    filter: blur(2px);
+  }
+  25% {
+    transform: 
+      scaleY(-1) 
+      rotateX(16deg) 
+      scaleX(0.94) 
+      translateY(1px);
+    filter: blur(2.5px);
+  }
+  50% {
+    transform: 
+      scaleY(-1) 
+      rotateX(14deg) 
+      scaleX(0.96) 
+      translateY(-1px);
+    filter: blur(1.8px);
+  }
+  75% {
+    transform: 
+      scaleY(-1) 
+      rotateX(15.5deg) 
+      scaleX(0.93) 
+      translateY(0.5px);
+    filter: blur(2.2px);
+  }
+}
+
+@keyframes waterShimmer {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateX(0px);
+  }
+  33% {
+    opacity: 0.5;
+    transform: translateX(2px);
+  }
+  66% {
+    opacity: 0.2;
+    transform: translateX(-1px);
+  }
+}
+
+/* Optional: Add some spacing between original and reflection */
+.water-reflection-container .original-image {
+  margin-bottom: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .reflection-container {
+    height: 50%;
+  }
+  
+  .reflection-image {
+    transform: 
+      scaleY(-1) 
+      rotateX(12deg) 
+      scaleX(0.96);
+  }
+}
