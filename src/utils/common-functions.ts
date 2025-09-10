@@ -23,6 +23,7 @@ import SuggestiveSearchCode from "../components/showcase/SuggestiveSearch.tsx?ra
 import SwitchCode from "../components/showcase/Switch.tsx?raw";
 import TypewriterTextCode from "../components/showcase/TypewriterText.tsx?raw";
 import VideoMaskedTextCode from "../components/showcase/VideoMaskedText.tsx?raw";
+import ProgressiveHoverCardCode from "../components/showcase/ProgressiveHoverCard.tsx?raw";
 
 export const getComponentCode = (id: string) => {
   switch (id) {
@@ -97,6 +98,9 @@ export const getComponentCode = (id: string) => {
 
     case COMPONENT_IDS.card3D:
       return Card3DCode;
+
+    case COMPONENT_IDS.progressiveHoverCard:
+      return ProgressiveHoverCardCode;
 
     default:
       return "";

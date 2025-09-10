@@ -9,15 +9,25 @@ import { PreviewComponent } from "./Preview";
 interface ComponentPreviewProps {
   component: ComponentData;
   showTabs?: boolean;
+  isPreview?: boolean;
   className?: string;
 }
 
 export const ComponentPreview = ({
   component,
   showTabs = true,
+  isPreview = false,
   className,
 }: ComponentPreviewProps) => {
   const navigate = useNavigate();
+
+  if (isPreview) {
+    return (
+      <div className="flex items-center justify-center h-[48vh] p-6 overflow-hidden">
+        <PreviewComponent componentId={component.id} isDetailedPage={false} />
+      </div>
+    );
+  }
 
   if (!showTabs) {
     return (

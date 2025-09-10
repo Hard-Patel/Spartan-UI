@@ -204,7 +204,7 @@ export const PreviewComponent = ({
       return (
         <SmoothBubbleText
           text="Hover over me to see the effect"
-          className="text-center font-extrabold text-6xl"
+          className="text-center font-extrabold text-4xl sm:text-6xl"
         />
       );
 
