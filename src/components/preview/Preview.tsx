@@ -252,10 +252,8 @@ export const PreviewComponent = ({
               {"📱"}
             </div>
             <div className="p-6 flex-1 flex flex-col">
-              <h3 className="text-xl font-bold text-white mb-2">
-                Smartphone Pro
-              </h3>
-              <p className="text-white/60 text-sm flex-1 mb-4">
+              <h3 className="text-xl font-bold mb-2">Smartphone Pro</h3>
+              <p className="text-gray-500 text-sm flex-1 mb-4">
                 Latest flagship smartphone with advanced AI camera and
                 lightning-fast performance
               </p>
@@ -272,11 +270,7 @@ export const PreviewComponent = ({
 
     case COMPONENT_IDS.focusedText:
       return (
-        <FocusedText
-          fontSize="text-4xl"
-          fontWeight="font-bold"
-          direction="up"
-        >
+        <FocusedText fontSize="text-4xl" fontWeight="font-bold" direction="up">
           Hover and Check Slide
         </FocusedText>
       );
