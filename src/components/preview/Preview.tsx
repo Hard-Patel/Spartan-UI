@@ -17,14 +17,14 @@ import { SparkleCard } from "../showcase/SparkleCard";
 import { SuggestiveSearch } from "../showcase/SuggestiveSearch";
 import { TypewriterText } from "../showcase/TypewriterText";
 import { VideoMaskedText } from "../showcase/VideoMaskedText";
-import { WaterReflectionImage } from "../showcase/WaterReflectionImage";
 import GlassCardPreview from "./GlassCardPreview";
+import { ParallaxDemo } from "./ParallaxImageDemo";
+import { ProgressiveHoverDemo } from "./ProgressiveHoverDemo";
 import { ScrollNavPreview } from "./ScrollNavPreview";
 import { ScrollProgressPreviewTab } from "./ScrollProgressPreviewTab";
 import SwitchPreview from "./SwitchPreview";
 import { TextRevealPreview } from "./TextRevealPreview";
 import { UserAvatarsPreview } from "./UserAvatarsPreview";
-import { ProgressiveHoverDemo } from "./ProgressiveHoverDemo";
 
 export const PreviewComponent = ({
   componentId,
@@ -279,6 +279,9 @@ export const PreviewComponent = ({
 
     case COMPONENT_IDS.progressiveHoverCard:
       return <ProgressiveHoverDemo isDetailsPage={isDetailedPage} />;
+
+    case COMPONENT_IDS.parallaxImage:
+      return <ParallaxDemo />;
 
     default:
       return (

@@ -1,10 +1,16 @@
 import { useRef, useState } from "react";
 
+export type ProgressiveHoverCardProps = {
+  children: React.ReactNode;
+  className?: string;
+  hoverColor?: string;
+};
+
 export const ProgressiveHoverCard = ({
   children,
   className = "",
   hoverColor = "bg-blue-500",
-}) => {
+}: ProgressiveHoverCardProps) => {
   const [hoverState, setHoverState] = useState({
     isHovered: false,
     x: 0,
