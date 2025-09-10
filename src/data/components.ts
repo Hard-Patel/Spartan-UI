@@ -60,19 +60,19 @@ export const COMPONENT_IDS = {
 
 // 2. Define the display order using COMPONENT_IDS only
 export const COMPONENT_ORDER = [
+  COMPONENT_IDS.userAvatars,
+  COMPONENT_IDS.bubbleText,
+  COMPONENT_IDS.glassCard,
   COMPONENT_IDS.aiCard,
   COMPONENT_IDS.sparkleCard,
-  COMPONENT_IDS.glassCard,
   COMPONENT_IDS.card3D,
   COMPONENT_IDS.revealText,
-  COMPONENT_IDS.userAvatars,
   COMPONENT_IDS.progressiveHoverCard,
   COMPONENT_IDS.parallaxImage,
   COMPONENT_IDS.suggestiveSearch,
   COMPONENT_IDS.scrollProgress,
   COMPONENT_IDS.scrollNav,
   COMPONENT_IDS.videoMaskedText,
-  COMPONENT_IDS.bubbleText,
   COMPONENT_IDS.maskedText,
   COMPONENT_IDS.cursorAwareButton,
   COMPONENT_IDS.animatedThemeToggle,
@@ -130,7 +130,7 @@ const rawComponentsData: ComponentData[] = [
     description:
       "Focus effect on hover for the text or children component from the wrapper",
     category: "Text",
-    featured: true,
+    featured: false,
     listed: true,
     dependencies: ["tailwindcss", "motion/react"],
     new: true,
@@ -205,7 +205,7 @@ const rawComponentsData: ComponentData[] = [
     name: "Card 3D",
     description: "Card component which gives 3d like effect on hover",
     category: "Card",
-    featured: true,
+    featured: false,
     listed: true,
     new: true,
     dependencies: ["tailwindcss", "motion/react"],
@@ -259,7 +259,7 @@ const rawComponentsData: ComponentData[] = [
     name: "Cursor Aware Button",
     description: "Button which have the cursor aware ripple effect animations",
     category: "Button",
-    featured: true,
+    featured: false,
     listed: true,
     new: true,
     dependencies: ["tailwindcss"],
@@ -409,7 +409,7 @@ const rawComponentsData: ComponentData[] = [
     description:
       "Text with the background image which is visible through the masked effect",
     category: "Text",
-    featured: true,
+    featured: false,
     listed: true,
     dependencies: ["tailwindcss"],
     props: [
@@ -442,7 +442,7 @@ const rawComponentsData: ComponentData[] = [
     description:
       "Typewriter effect for text which can be configured as per usecases",
     category: "Text",
-    featured: true,
+    featured: false,
     listed: true,
     new: true,
     dependencies: ["tailwindcss"],
@@ -1119,7 +1119,7 @@ const rawComponentsData: ComponentData[] = [
     description:
       "Animated Aurora Text component that animates the gradients inside the text",
     category: "Text",
-    featured: true,
+    featured: false,
     listed: true,
     dependencies: ["tailwindcss", "motion/react"],
     props: [
