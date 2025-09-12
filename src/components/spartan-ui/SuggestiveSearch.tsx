@@ -1,4 +1,6 @@
-// SuggestiveSearch.tsx
+import { cn } from "@/lib/utils";
+import { Search } from "lucide-react";
+import { motion } from "motion/react";
 import React, {
   useEffect,
   useMemo,
@@ -6,9 +8,6 @@ import React, {
   useState,
   type RefObject,
 } from "react";
-import { motion } from "motion/react";
-import { cn } from "@/lib/utils";
-import { Search } from "lucide-react";
 
 /**
  * Props for any effect renderer. Effects are responsible for animating the
@@ -74,7 +73,7 @@ export const TypewriterEffect: React.FC<EffectRendererProps> = ({
   const [phase, setPhase] = useState<"typing" | "paused" | "deleting">(
     "typing"
   );
-  const timers = useRef<ReturnType<typeof window.setTimeout>[]>([]);
+  const timers = useRef<number[]>([]);
 
   useEffect(() => {
     setPhase("typing");
@@ -217,7 +216,7 @@ export const SlideEffect: React.FC<EffectRendererProps> = ({
   containerRef,
 }) => {
   const [phase, setPhase] = useState<"enter" | "pause" | "exit">("enter");
-  const timers = useRef<ReturnType<typeof window.setTimeout>[]>([]);
+  const timers = useRef<number[]>([]);
 
   useEffect(() => {
     setPhase("enter");
@@ -319,7 +318,7 @@ export const FadeEffect: React.FC<EffectRendererProps> = ({
   containerRef,
 }) => {
   const [phase, setPhase] = useState<"fadeIn" | "hold" | "fadeOut">("fadeIn");
-  const timers = useRef<ReturnType<typeof window.setTimeout>[]>([]);
+  const timers = useRef<number[]>([]);
 
   useEffect(() => {
     setPhase("fadeIn");

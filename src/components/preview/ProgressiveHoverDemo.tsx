@@ -1,4 +1,4 @@
-import { ProgressiveHoverCard } from "../showcase/ProgressiveHoverCard";
+import { ProgressiveHoverCard } from "../spartan-ui/ProgressiveHoverCard";
 
 // Demo component
 const ProgressiveHoverDemo = ({

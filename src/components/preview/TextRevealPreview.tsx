@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { TextReveal } from "../showcase/RevealText";
+import { TextReveal } from "../spartan-ui/RevealText";
 
 export const TextRevealPreview = () => {
   const [counter, SetCounter] = useState(1);

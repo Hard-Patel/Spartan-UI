@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { useRef, useState } from "react";
 
-export const SmoothBubbleText = ({
+export const BubbleText = ({
   text = "The digital marketing agency",
   bubbleSize = 120,
   className = "",
@@ -19,7 +19,7 @@ export const SmoothBubbleText = ({
     setIsHovering(false);
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: any) => {
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
       setMousePosition({

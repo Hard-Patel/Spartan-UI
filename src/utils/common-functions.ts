@@ -1,12 +1,9 @@
-import GlassCardCode from "@/components/showcase/GlassCard.tsx?raw";
 import ScrollProgressCode from "@/components/showcase/ScrollProgress.tsx?raw";
+import GlassCardCode from "@/components/spartan-ui/GlassCard.tsx?raw";
 import { COMPONENT_IDS } from "@/data/components";
-import AICardCode from "../components/showcase/AICard.tsx?raw";
 import AnimatedButtonCode from "../components/showcase/AnimatedButton.tsx?raw";
 import AnimatedThemeToggleCode from "../components/showcase/AnimatedThemeToggler.tsx?raw";
-import UserAvatarsCode from "../components/showcase/AnimatedUserAvatars.tsx?raw";
 import AuroraTextCode from "../components/showcase/AuroraText.tsx?raw";
-import Card3DCode from "../components/showcase/Card3D.tsx?raw";
 import CursorAwareButtonCode from "../components/showcase/CursorAwareButton.tsx?raw";
 import FocusedTextCode from "../components/showcase/FocusedText.tsx?raw";
 import HighlightedTextCode from "../components/showcase/HighlightedText.tsx?raw";
@@ -14,21 +11,27 @@ import HyperTextCode from "../components/showcase/HyperText.tsx?raw";
 import InteractiveCardCode from "../components/showcase/InteractiveCard.tsx?raw";
 import MarqueeCode from "../components/showcase/Marquee.tsx?raw";
 import MaskedTextCode from "../components/showcase/MaskedText.tsx?raw";
-import TextRevealCode from "../components/showcase/RevealText.tsx?raw";
 import ScrollNavCode from "../components/showcase/ScrollNav.tsx?raw";
 import SlideTextCode from "../components/showcase/SlideText.tsx?raw";
-import SmoothBubbleTextCode from "../components/showcase/SmoothBubbleText.tsx?raw";
-import SparkleCardCode from "../components/showcase/SparkleCard.tsx?raw";
-import SuggestiveSearchCode from "../components/showcase/SuggestiveSearch.tsx?raw";
 import SwitchCode from "../components/showcase/Switch.tsx?raw";
 import TypewriterTextCode from "../components/showcase/TypewriterText.tsx?raw";
 import VideoMaskedTextCode from "../components/showcase/VideoMaskedText.tsx?raw";
-import ProgressiveHoverCardCode from "../components/showcase/ProgressiveHoverCard.tsx?raw";
+import AICardCode from "../components/spartan-ui/AICard.tsx?raw";
+import BubbleTextCode from "../components/spartan-ui/BubbleText.tsx?raw";
+import Card3DCode from "../components/spartan-ui/Card3D.tsx?raw";
+import ProgressiveHoverCardCode from "../components/spartan-ui/ProgressiveHoverCard.tsx?raw";
+import TextRevealCode from "../components/spartan-ui/RevealText.tsx?raw";
+import SparkleCardCode from "../components/spartan-ui/SparkleCard.tsx?raw";
+import SuggestiveSearchCode from "../components/spartan-ui/SuggestiveSearch.tsx?raw";
+import UserAvatarsCode from "../components/spartan-ui/UserAvatars.tsx?raw";
 
 export const getComponentCode = (id: string) => {
   switch (id) {
     case COMPONENT_IDS.glassCard:
       return GlassCardCode;
+
+    case COMPONENT_IDS.revealText:
+      return TextRevealCode;
 
     case COMPONENT_IDS.interactiveCard:
       return InteractiveCardCode;
@@ -88,7 +91,7 @@ export const getComponentCode = (id: string) => {
       return FocusedTextCode;
 
     case COMPONENT_IDS.bubbleText:
-      return SmoothBubbleTextCode;
+      return BubbleTextCode;
 
     case COMPONENT_IDS.cursorAwareButton:
       return CursorAwareButtonCode;

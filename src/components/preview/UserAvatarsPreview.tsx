@@ -1,4 +1,4 @@
-import { UserAvatars } from "../showcase/AnimatedUserAvatars";
+import { UserAvatars } from "../spartan-ui/UserAvatars";
 
 export const UserAvatarsPreview = () => {
   return (

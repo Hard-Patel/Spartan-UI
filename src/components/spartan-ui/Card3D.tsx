@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "motion/react";
+import { MouseEvent, useRef, useState } from "react";
 
 type T3DCardProps = {
   children: React.ReactNode;
@@ -21,9 +21,9 @@ export const Card3D = ({
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const cardRef = useRef(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: any) => {
     if (!cardRef.current) return;
 
     const card = cardRef.current;

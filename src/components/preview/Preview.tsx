@@ -1,9 +1,7 @@
 import { COMPONENT_IDS } from "@/data/components";
-import AICard from "../showcase/AICard";
 import { AnimatedButton } from "../showcase/AnimatedButton";
 import { AnimatedThemeToggle } from "../showcase/AnimatedThemeToggler";
 import { AuroraText } from "../showcase/AuroraText";
-import { Card3D } from "../showcase/Card3D";
 import { CursorAwareButton } from "../showcase/CursorAwareButton";
 import { FocusedText } from "../showcase/FocusedText";
 import { HighlightedText } from "../showcase/HighlightedText";
@@ -12,11 +10,9 @@ import { InteractiveCard } from "../showcase/InteractiveCard";
 import { Marquee } from "../showcase/Marquee";
 import { MaskedText } from "../showcase/MaskedText";
 import { SlideText } from "../showcase/SlideText";
-import { SmoothBubbleText } from "../showcase/SmoothBubbleText";
-import { SparkleCard } from "../showcase/SparkleCard";
-import { SuggestiveSearch } from "../showcase/SuggestiveSearch";
 import { TypewriterText } from "../showcase/TypewriterText";
 import { VideoMaskedText } from "../showcase/VideoMaskedText";
+import { BubbleText } from "../spartan-ui/BubbleText";
 import GlassCardPreview from "./GlassCardPreview";
 import { ParallaxDemo } from "./ParallaxImageDemo";
 import { ProgressiveHoverDemo } from "./ProgressiveHoverDemo";
@@ -25,6 +21,10 @@ import { ScrollProgressPreviewTab } from "./ScrollProgressPreviewTab";
 import SwitchPreview from "./SwitchPreview";
 import { TextRevealPreview } from "./TextRevealPreview";
 import { UserAvatarsPreview } from "./UserAvatarsPreview";
+import AICard from "../spartan-ui/AICard";
+import { SparkleCard } from "../spartan-ui/SparkleCard";
+import { Card3D } from "../spartan-ui/Card3D";
+import SuggestiveSearch from "../spartan-ui/SuggestiveSearch";
 
 export const PreviewComponent = ({
   componentId,
@@ -202,7 +202,7 @@ export const PreviewComponent = ({
 
     case COMPONENT_IDS.bubbleText:
       return (
-        <SmoothBubbleText
+        <BubbleText
           text="Hover over me to see the effect"
           className="text-center font-extrabold text-4xl sm:text-6xl"
         />

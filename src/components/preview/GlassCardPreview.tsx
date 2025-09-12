@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { GlassCard } from "../showcase/GlassCard";
+import { GlassCard } from "../spartan-ui/GlassCard";
 
 const GlassCardPreview = () => {
   return (
