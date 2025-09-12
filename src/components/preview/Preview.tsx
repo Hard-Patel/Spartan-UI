@@ -1,14 +1,22 @@
 import { COMPONENT_IDS } from "@/data/components";
+import AICard from "../spartan-ui/AICard";
 import { AnimatedButton } from "../spartan-ui/AnimatedButton";
 import { AnimatedThemeToggle } from "../spartan-ui/AnimatedThemeToggler";
+import { AuroraText } from "../spartan-ui/AuroraText";
+import { BubbleText } from "../spartan-ui/BubbleText";
+import { Card3D } from "../spartan-ui/Card3D";
 import { CursorAwareButton } from "../spartan-ui/CursorAwareButton";
+import { FocusedText } from "../spartan-ui/FocusedText";
 import { HighlightedText } from "../spartan-ui/HighlightedText";
 import { HyperTextToggle } from "../spartan-ui/HyperText";
 import { InteractiveCard } from "../spartan-ui/InteractiveCard";
 import { Marquee } from "../spartan-ui/Marquee";
+import { MaskedText } from "../spartan-ui/MaskedText";
 import { SlideText } from "../spartan-ui/SlideText";
+import { SparkleCard } from "../spartan-ui/SparkleCard";
+import SuggestiveSearch from "../spartan-ui/SuggestiveSearch";
 import { TypewriterText } from "../spartan-ui/TypewriterText";
-import { BubbleText } from "../spartan-ui/BubbleText";
+import { VideoMaskedText } from "../spartan-ui/VideoMaskedText";
 import GlassCardPreview from "./GlassCardPreview";
 import { ParallaxDemo } from "./ParallaxImageDemo";
 import { ProgressiveHoverDemo } from "./ProgressiveHoverDemo";
@@ -17,14 +25,6 @@ import { ScrollProgressPreviewTab } from "./ScrollProgressPreviewTab";
 import SwitchPreview from "./SwitchPreview";
 import { TextRevealPreview } from "./TextRevealPreview";
 import { UserAvatarsPreview } from "./UserAvatarsPreview";
-import AICard from "../spartan-ui/AICard";
-import { SparkleCard } from "../spartan-ui/SparkleCard";
-import { Card3D } from "../spartan-ui/Card3D";
-import SuggestiveSearch from "../spartan-ui/SuggestiveSearch";
-import { MaskedText } from "../spartan-ui/MaskedText";
-import { VideoMaskedText } from "../spartan-ui/VideoMaskedText";
-import { AuroraText } from "../spartan-ui/AuroraText";
-import { FocusedText } from "../spartan-ui/FocusedText";
 
 export const PreviewComponent = ({
   componentId,
@@ -216,7 +216,7 @@ export const PreviewComponent = ({
             rounded="rounded-full"
             onClick={() => null}
           >
-            Rounded with Border
+            <span>Rounded with Border</span>
           </CursorAwareButton>
           <CursorAwareButton
             borderColor="border-0 border-transparent"
@@ -225,7 +225,7 @@ export const PreviewComponent = ({
             rounded="rounded-md"
             onClick={() => null}
           >
-            Square without Border
+            <span>Square without Border</span>
           </CursorAwareButton>
         </div>
       );

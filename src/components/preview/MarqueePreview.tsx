@@ -23,7 +23,7 @@ export const MarqueePreview = () => {
           Customer Testimonials
         </h2>
         <div className="bg-gray-50 border py-6">
-          <Marquee speed={50} pauseOnHover={true} gap={60}>
+          <Marquee speed={50} pauseOnHover={true}>
             <div className="flex items-center space-x-12">
               <div className="bg-white p-4 rounded-lg shadow-sm min-w-max">
                 <p className="text-sm text-gray-600 mb-2">
