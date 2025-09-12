@@ -85,6 +85,64 @@ const ComponentDetail = () => {
               <ComponentPreview component={component} />
             </motion.div>
 
+            {/* CLI Instruction */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mb-12 max-w-[88vw]"
+            >
+              <h2 className="text-xl md:text-2xl font-bold mb-4">CLI Manual</h2>
+              <div className="code-block">
+                <p className="text-sm text-muted-foreground mb-3">
+                  Use the CLI to bring the component in your project
+                </p>
+                {component.cli && (
+                  <div className="mb-4">
+                    <p className="text-sm font-medium mb-2">CLI:</p>
+                    <code className="relative block bg-muted/50 p-4 rounded-md text-sm">
+                      npx shadcn@latest add {component.cli}
+                      <div className="absolute top-1/2 -translate-y-1/2 right-3 z-10">
+                        <Button
+                          variant="secondary"
+                          size="sm"
+                          onClick={() =>
+                            copyToClipboard(
+                              `npx shadcn@latest add ${component.cli}`
+                            )
+                          }
+                          className="px-2 bg-background/80 hover:bg-background/80 backdrop-blur-sm"
+                        >
+                          <AnimatePresence mode="wait">
+                            {copied ? (
+                              <motion.span
+                                key="copied"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
+                                className="text-green-400"
+                              >
+                                <ClipboardCheck />
+                              </motion.span>
+                            ) : (
+                              <motion.span
+                                key="copy"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
+                              >
+                                <Clipboard />
+                              </motion.span>
+                            )}
+                          </AnimatePresence>
+                        </Button>
+                      </div>
+                    </code>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+
             {/* Installation Instructions */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}

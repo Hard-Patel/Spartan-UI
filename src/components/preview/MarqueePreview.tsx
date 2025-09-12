@@ -1,4 +1,4 @@
-import { Marquee } from "../showcase/Marquee";
+import { Marquee } from "../spartan-ui/Marquee";
 
 // Demo component showing different marquee examples
 export const MarqueePreview = () => {

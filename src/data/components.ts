@@ -3,6 +3,7 @@ export interface ComponentData {
   name: string;
   description: string;
   category: string;
+  cli?: string;
   dependencies?: string[];
   featured?: boolean;
   listed?: boolean;
@@ -89,10 +90,13 @@ export const COMPONENT_ORDER = [
   COMPONENT_IDS.waterReflectedImage,
 ] as const;
 
+const CLI_BASE_URL = "https://components-registry.netlify.app/r";
+
 // 3. Raw components data (same as you already have)
 const rawComponentsData: ComponentData[] = [
   {
     id: COMPONENT_IDS.progressiveHoverCard,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.progressiveHoverCard}.json`,
     name: "Progressive Hover Card",
     description: "Card with progresive hover effect with smooth animation",
     category: "Card",
