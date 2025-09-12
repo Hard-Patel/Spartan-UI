@@ -86,20 +86,19 @@ const ComponentDetail = () => {
             </motion.div>
 
             {/* CLI Instruction */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-12 max-w-[88vw]"
-            >
-              <h2 className="text-xl md:text-2xl font-bold mb-4">CLI Manual</h2>
-              <div className="code-block">
-                <p className="text-sm text-muted-foreground mb-3">
-                  Use the CLI to bring the component in your project
-                </p>
-                {component.cli && (
+            {component.cli ? (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="mb-12 max-w-[88vw]"
+              >
+                <div className="code-block">
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Use the CLI to bring the component in your project
+                  </p>
                   <div className="mb-4">
-                    <p className="text-sm font-medium mb-2">CLI:</p>
+                    <p className="text-sm font-medium mb-2">Command</p>
                     <code className="relative block bg-muted/50 p-4 rounded-md text-sm">
                       npx shadcn@latest add {component.cli}
                       <div className="absolute top-1/2 -translate-y-1/2 right-3 z-10">
@@ -139,9 +138,9 @@ const ComponentDetail = () => {
                       </div>
                     </code>
                   </div>
-                )}
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
+            ) : null}
 
             {/* Installation Instructions */}
             <motion.div

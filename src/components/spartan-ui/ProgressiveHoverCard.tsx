@@ -17,9 +17,9 @@ export const ProgressiveHoverCard = ({
     y: 0,
     size: 0,
   });
-  const cardRef = useRef(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseEnter = (e) => {
+  const handleMouseEnter = (e: any) => {
     const card = cardRef.current;
     if (!card) return;
 

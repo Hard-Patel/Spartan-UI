@@ -130,6 +130,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.focusedText,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.focusedText}.json`,
     name: "Focused Text",
     description:
       "Focus effect on hover for the text or children component from the wrapper",
@@ -206,6 +207,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.card3D,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.card3D}.json`,
     name: "Card 3D",
     description: "Card component which gives 3d like effect on hover",
     category: "Card",
@@ -260,6 +262,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.cursorAwareButton,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.cursorAwareButton}.json`,
     name: "Cursor Aware Button",
     description: "Button which have the cursor aware ripple effect animations",
     category: "Button",
@@ -350,6 +353,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.bubbleText,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.bubbleText}.json`,
     name: "Bubble Text",
     description:
       "Bubble text is a lens like view which shows an inverted things through the bubble",
@@ -384,6 +388,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.glassCard,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.glassCard}.json`,
     name: "Glass Card",
     description: "Card component that have Glass morphic effect",
     category: "Card",
@@ -409,6 +414,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.maskedText,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.maskedText}.json`,
     name: "Masked Text",
     description:
       "Text with the background image which is visible through the masked effect",
@@ -442,6 +448,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.typewriterText,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.typewriterText}.json`,
     name: "Typewriter Text",
     description:
       "Typewriter effect for text which can be configured as per usecases",
@@ -491,6 +498,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.revealText,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.revealText}.json`,
     name: "Text Reveal",
     description: "Text with animated effect of reveal",
     category: "Text",
@@ -524,6 +532,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.videoMaskedText,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.videoMaskedText}.json`,
     name: "Video Masked Text",
     description:
       "Text with the video background which is visible through the masked effect",
@@ -585,6 +594,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.aiCard,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.aiCard}.json`,
     name: "AI Card",
     description:
       "Card component that wraps childrens and can be easily used to highlight or give AI effect",
@@ -639,6 +649,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.scrollNav,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.scrollNav}.json`,
     name: "Scrollbar with ToC",
     description:
       "Scrollbar that lets you see the progress and move to the specific section as well",
@@ -665,6 +676,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.animatedButton,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.animatedButton}.json`,
     name: "Animated Button",
     description: "A sleek button with hover animations and gradient background",
     category: "Buttons",
@@ -712,6 +724,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.marquee,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.marquee}.json`,
     name: "Infinite Marquee",
     description:
       "Smooth infinite scrolling text marquee with customizable speed",
@@ -759,6 +772,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.highlightedText,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.highlightedText}.json`,
     name: "Highlighted Text",
     description: "Text with animated highlight background effect",
     category: "Text Effects",
@@ -798,6 +812,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.interactiveCard,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.interactiveCard}.json`,
     name: "Interactive Card",
     description: "Card with tilt effect and animated border on hover",
     category: "Cards",
@@ -823,6 +838,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.userAvatars,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.userAvatars}.json`,
     name: "User Avatars",
     description:
       "User avatars with scale and reveal animation with name visibility on hover",
@@ -898,6 +914,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.animatedThemeToggle,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.animatedThemeToggle}.json`,
     name: "Animated Theme Toggle",
     description:
       "Animated Button to Toggle the theme with ripple effect, giving a great UX",
@@ -931,6 +948,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.suggestiveSearch,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.suggestiveSearch}.json`,
     name: "Suggestive Search",
     description: "Search component with animated suggestions and effects",
     category: "Search",
@@ -1036,6 +1054,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.hyperText,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.hyperText}.json`,
     name: "Hyper Text",
     description:
       "Animated Hyper Text component that reveals the actual text with defined delay and animation",
@@ -1070,6 +1089,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.slideText,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.slideText}.json`,
     name: "Slide Text",
     description:
       "Animated Slide Text component that loops through all the texts with specified delay",
@@ -1119,6 +1139,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.auroraText,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.auroraText}.json`,
     name: "Aurora Text",
     description:
       "Animated Aurora Text component that animates the gradients inside the text",
@@ -1161,6 +1182,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.scrollProgress,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.scrollProgress}.json`,
     name: "Scroll Progress",
     description:
       "Scroll Progress Component which can be used to add the progress view in top, bottom, left or right view",
@@ -1201,6 +1223,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.switch,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.switch}.json`,
     name: "Switch",
     description: "Switch component that smoothly toggles the state",
     category: "Switch",
@@ -1247,6 +1270,7 @@ const rawComponentsData: ComponentData[] = [
   },
   {
     id: COMPONENT_IDS.sparkleCard,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.sparkleCard}.json`,
     name: "Sparkle Card",
     description:
       "Card component that have a sparkling effect in the background",
