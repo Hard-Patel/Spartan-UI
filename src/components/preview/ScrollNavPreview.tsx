@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { ScrollNav } from "../showcase/ScrollNav";
+import { ScrollNav } from "../spartan-ui/ScrollNav";
 
 export function ScrollNavPreview() {
   const sections = [

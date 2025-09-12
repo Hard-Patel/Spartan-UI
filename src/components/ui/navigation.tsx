@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import brush from "../../assets/images/brush.png";
-import { AnimatedThemeToggle } from "../showcase/AnimatedThemeToggler";
+import { AnimatedThemeToggle } from "../spartan-ui/AnimatedThemeToggler";
 
 interface NavigationProps {
   className?: string;

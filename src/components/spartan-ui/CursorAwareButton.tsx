@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { useRef, useState } from "react";
 
 export const CursorAwareButton = ({
-  children,
+  children = <></>,
   defaultColor = "bg-white",
   hoverColor = "bg-yellow-400",
   textColor = "text-gray-900",
@@ -11,18 +11,17 @@ export const CursorAwareButton = ({
   rounded = "rounded-full",
   size = "px-8 py-3",
   className = "",
-  onClick,
-  ...props
+  onClick = () => {},
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const buttonRef = useRef(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   // Use refs to store position immediately without state delays
   const cursorX = useRef(50);
   const cursorY = useRef(50);
   const [animationKey, setAnimationKey] = useState(0);
 
-  const handleMouseEnter = (e) => {
+  const handleMouseEnter = (e: any) => {
     if (buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -53,7 +52,6 @@ export const CursorAwareButton = ({
       onClick={onClick}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
-      {...props}
     >
       {/* Background animation layer */}
       <motion.div

@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import { ScrollProgress } from "../showcase/ScrollProgress";
 import { cn } from "@/lib/utils";
+import { ScrollProgress } from "../spartan-ui/ScrollProgress";
 
 export function ScrollProgressPreviewTab({
   className,

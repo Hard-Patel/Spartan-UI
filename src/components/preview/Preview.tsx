@@ -1,17 +1,13 @@
 import { COMPONENT_IDS } from "@/data/components";
-import { AnimatedButton } from "../showcase/AnimatedButton";
-import { AnimatedThemeToggle } from "../showcase/AnimatedThemeToggler";
-import { AuroraText } from "../showcase/AuroraText";
-import { CursorAwareButton } from "../showcase/CursorAwareButton";
-import { FocusedText } from "../showcase/FocusedText";
-import { HighlightedText } from "../showcase/HighlightedText";
-import { HyperTextToggle } from "../showcase/HyperText";
-import { InteractiveCard } from "../showcase/InteractiveCard";
-import { Marquee } from "../showcase/Marquee";
-import { MaskedText } from "../showcase/MaskedText";
-import { SlideText } from "../showcase/SlideText";
-import { TypewriterText } from "../showcase/TypewriterText";
-import { VideoMaskedText } from "../showcase/VideoMaskedText";
+import { AnimatedButton } from "../spartan-ui/AnimatedButton";
+import { AnimatedThemeToggle } from "../spartan-ui/AnimatedThemeToggler";
+import { CursorAwareButton } from "../spartan-ui/CursorAwareButton";
+import { HighlightedText } from "../spartan-ui/HighlightedText";
+import { HyperTextToggle } from "../spartan-ui/HyperText";
+import { InteractiveCard } from "../spartan-ui/InteractiveCard";
+import { Marquee } from "../spartan-ui/Marquee";
+import { SlideText } from "../spartan-ui/SlideText";
+import { TypewriterText } from "../spartan-ui/TypewriterText";
 import { BubbleText } from "../spartan-ui/BubbleText";
 import GlassCardPreview from "./GlassCardPreview";
 import { ParallaxDemo } from "./ParallaxImageDemo";
@@ -25,6 +21,10 @@ import AICard from "../spartan-ui/AICard";
 import { SparkleCard } from "../spartan-ui/SparkleCard";
 import { Card3D } from "../spartan-ui/Card3D";
 import SuggestiveSearch from "../spartan-ui/SuggestiveSearch";
+import { MaskedText } from "../spartan-ui/MaskedText";
+import { VideoMaskedText } from "../spartan-ui/VideoMaskedText";
+import { AuroraText } from "../spartan-ui/AuroraText";
+import { FocusedText } from "../spartan-ui/FocusedText";
 
 export const PreviewComponent = ({
   componentId,
