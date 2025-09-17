@@ -37,11 +37,26 @@ export const PreviewComponent = ({
   switch (componentId) {
     case COMPONENT_IDS.aiCard:
       return (
-        <AICard animate rounded="sm">
-          <button className="px-12 py-2 rounded-sm bg-background">
-            Ask AI to Generate an image
-          </button>
-        </AICard>
+        <div className="flex-col space-y-12">
+          <AICard animate rounded="sm">
+            <button className="px-12 py-2 rounded-sm bg-background">
+              Ask AI to Generate an image
+            </button>
+          </AICard>
+          {isDetailedPage && (
+            <div className="space-y-1">
+              <span>Without animation</span>
+              <AICard
+                rounded="sm"
+                gradient={["#fa893b", "#398acd", "#889abc", "#12cab4"]}
+              >
+                <button className="px-12 py-2 rounded-sm bg-background">
+                  Ask AI to Generate an image
+                </button>
+              </AICard>
+            </div>
+          )}
+        </div>
       );
 
     case COMPONENT_IDS.glassCard:
@@ -60,7 +75,7 @@ export const PreviewComponent = ({
       return <Marquee>Hello</Marquee>;
 
     case COMPONENT_IDS.userAvatars:
-      return <UserAvatarsPreview />;
+      return <UserAvatarsPreview isDetailedPage={isDetailedPage} />;
 
     case COMPONENT_IDS.highlightedText:
       return (
@@ -171,12 +186,25 @@ export const PreviewComponent = ({
 
     case "sparkle-card":
       return (
-        <SparkleCard className="w-96 h-48">
-          <h2 className="text-xl font-bold">Sparkle Card ✨</h2>
-          <p className="text-muted-foreground">
-            Glowing dots in the background
-          </p>
-        </SparkleCard>
+        <div className="flex-col">
+          <SparkleCard className="w-96 h-48">
+            <h2 className="text-xl font-bold">Sparkle Card ✨</h2>
+            <p className="text-muted-foreground">
+              Glowing dots in the background
+            </p>
+          </SparkleCard>
+
+          {isDetailedPage && (
+            <div className="space-y-8 mt-8">
+              <SparkleCard duration={12} sparkles={120} className="w-96 h-48">
+                <h2 className="text-xl font-bold">Sparkle Card ✨</h2>
+                <p className="text-muted-foreground">
+                  Densed & longer time glowing dots in the background
+                </p>
+              </SparkleCard>
+            </div>
+          )}
+        </div>
       );
 
     case "masked-text":

@@ -4,7 +4,6 @@ import { PropsSection } from "@/components/common/PropsSection";
 import { ComponentPreview } from "@/components/preview/ComponentPreview";
 import { Button } from "@/components/ui/button";
 import { componentsData, getComponentById } from "@/data/components";
-import { getComponentCode } from "@/utils/common-functions";
 import { Clipboard, ClipboardCheck } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
@@ -35,7 +34,6 @@ const ComponentDetail = () => {
     currentIndex < componentsData.length - 1
       ? componentsData[currentIndex + 1]
       : null;
-  const componentRawCode = getComponentCode(component.id);
 
   return (
     <div className="min-h-screen bg-background">
