@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { InteractiveGrid } from "../common/InteractiveGrid";
 import { Button } from "../ui/button";
+import { ConnectWithMe } from "../common/ConnectWithMe";
 
 const HeroSection = () => {
   return (
@@ -43,6 +44,8 @@ const HeroSection = () => {
             </Button>
           </motion.div>
         </div>
+
+        <ConnectWithMe />
       </div>
 
       {/* Animated glowing grid */}

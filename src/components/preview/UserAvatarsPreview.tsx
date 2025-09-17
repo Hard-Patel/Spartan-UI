@@ -8,7 +8,7 @@ export const UserAvatarsPreview = ({
   return (
     <div className="flex flex-col items-center">
       <p className="mb-4">Hover over specific user</p>
-      <div className="flex gap-x-24 items-center">
+      <div className="flex flex-col gap-y-12 md:gap-y-0 md:flex-row gap-x-24 items-center">
         <UserAvatars
           users={[
             {
