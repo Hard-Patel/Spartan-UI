@@ -35,7 +35,7 @@ export const COMPONENT_IDS = {
   progressiveHoverCard: "progressive-hover-card",
   focusedText: "focused-text",
   glassCard: "glass-card",
-  card3D: "3d-card",
+  card3D: "card-3d",
   typewriterText: "typewriter-text",
   aiCard: "ai-card",
   scrollNav: "scroll-nav",

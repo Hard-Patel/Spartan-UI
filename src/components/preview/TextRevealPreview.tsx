@@ -14,6 +14,7 @@ export const TextRevealPreview = () => {
 
     return () => clearInterval(animation);
   }, []);
+  
   return (
     <div className="relative w-full">
       {counter ? <TextReveal text={["How are you?"]} /> : null}
