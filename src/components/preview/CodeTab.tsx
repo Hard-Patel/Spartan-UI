@@ -1,62 +1,19 @@
-import { Button } from "@/components/ui/button";
 import { getComponentCode } from "@/utils/common-functions";
-import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import { Clipboard, ClipboardCheck } from "lucide-react";
 import { Prism, SyntaxHighlighterProps } from "react-syntax-highlighter";
-import '../common/sidebar.css';
+import "../common/sidebar.css";
+import CopyToClipboardButton from "../ui/CopyToClipboardButton";
 
 const SyntaxHighlighter = Prism as any as React.FC<SyntaxHighlighterProps>;
 
 export const CodeTab = ({ componentId }: { componentId: string }) => {
-  const [copied, setCopied] = useState(false);
-
-  const copyToClipboard = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy text: ", err);
-    }
-  };
-
   const componentRawCode = getComponentCode(componentId);
 
   return (
     <div className="relative max-h-[60vh] overflow-y-scroll sidebar-scroll">
       <div className="absolute top-4 right-4 z-10">
-        <Button
-          variant="secondary"
-          size="sm"
-          onClick={() => copyToClipboard(componentRawCode)}
-          className="bg-background/80 hover:bg-background/80 backdrop-blur-sm"
-        >
-          <AnimatePresence mode="wait">
-            {copied ? (
-              <motion.span
-                key="copied"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1.2 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                className="text-green-400"
-              >
-                <ClipboardCheck />
-              </motion.span>
-            ) : (
-              <motion.span
-                key="copy"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-              >
-                <Clipboard />
-              </motion.span>
-            )}
-          </AnimatePresence>
-        </Button>
+        <CopyToClipboardButton textToCopy={componentRawCode} />
       </div>
 
       <SyntaxHighlighter

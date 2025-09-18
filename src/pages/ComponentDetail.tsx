@@ -3,26 +3,15 @@ import { CSSSection } from "@/components/common/CSSSection";
 import { PropsSection } from "@/components/common/PropsSection";
 import { ComponentPreview } from "@/components/preview/ComponentPreview";
 import { Button } from "@/components/ui/button";
+import CopyToClipboardButton from "@/components/ui/CopyToClipboardButton";
 import { componentsData, getComponentById } from "@/data/components";
-import { Clipboard, ClipboardCheck } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { motion } from "motion/react";
 import { Link, Navigate, useParams } from "react-router-dom";
 
 const ComponentDetail = () => {
   const { id } = useParams<{ id: string }>();
   const component = id ? getComponentById(id) : null;
-  const [copied, setCopied] = useState(false);
 
-  const copyToClipboard = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy text: ", err);
-    }
-  };
   if (!component) {
     return <Navigate to="/components" replace />;
   }
@@ -100,39 +89,9 @@ const ComponentDetail = () => {
                     <code className="relative block bg-muted/50 p-4 rounded-md text-sm">
                       npx shadcn@latest add {component.cli}
                       <div className="absolute top-1/2 -translate-y-1/2 right-3 z-10">
-                        <Button
-                          variant="secondary"
-                          size="sm"
-                          onClick={() =>
-                            copyToClipboard(
-                              `npx shadcn@latest add ${component.cli}`
-                            )
-                          }
-                          className="px-2 bg-background/80 hover:bg-background/80 backdrop-blur-sm"
-                        >
-                          <AnimatePresence mode="wait">
-                            {copied ? (
-                              <motion.span
-                                key="copied"
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.8 }}
-                                className="text-green-400"
-                              >
-                                <ClipboardCheck />
-                              </motion.span>
-                            ) : (
-                              <motion.span
-                                key="copy"
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.8 }}
-                              >
-                                <Clipboard />
-                              </motion.span>
-                            )}
-                          </AnimatePresence>
-                        </Button>
+                        <CopyToClipboardButton
+                          textToCopy={`npx shadcn@latest add ${component.cli}`}
+                        />
                       </div>
                     </code>
                   </div>
@@ -163,41 +122,11 @@ const ComponentDetail = () => {
                       <code className="relative block bg-muted/50 p-4 rounded-md text-sm">
                         npm install {component.dependencies.join(" ")}
                         <div className="absolute top-1/2 -translate-y-1/2 right-3 z-10">
-                          <Button
-                            variant="secondary"
-                            size="sm"
-                            onClick={() =>
-                              copyToClipboard(
-                                `npm install ${component.dependencies.join(
-                                  " "
-                                )}`
-                              )
-                            }
-                            className="px-2 bg-background/80 hover:bg-background/80 backdrop-blur-sm"
-                          >
-                            <AnimatePresence mode="wait">
-                              {copied ? (
-                                <motion.span
-                                  key="copied"
-                                  initial={{ opacity: 0, scale: 0.8 }}
-                                  animate={{ opacity: 1, scale: 1 }}
-                                  exit={{ opacity: 0, scale: 0.8 }}
-                                  className="text-green-400"
-                                >
-                                  <ClipboardCheck />
-                                </motion.span>
-                              ) : (
-                                <motion.span
-                                  key="copy"
-                                  initial={{ opacity: 0, scale: 0.8 }}
-                                  animate={{ opacity: 1, scale: 1 }}
-                                  exit={{ opacity: 0, scale: 0.8 }}
-                                >
-                                  <Clipboard />
-                                </motion.span>
-                              )}
-                            </AnimatePresence>
-                          </Button>
+                          <CopyToClipboardButton
+                            textToCopy={`npm install ${component.dependencies.join(
+                              " "
+                            )}`}
+                          />
                         </div>
                       </code>
                     </div>
