@@ -33,8 +33,9 @@ export const COMPONENT_IDS = {
   bubbleText: "bubble-text",
   waterReflectedImage: "water-reflected-image",
   progressiveHoverCard: "progressive-hover-card",
-  focusedText: "focused-text",
+  blurHoverText: "blur-hover-text",
   glassCard: "glass-card",
+  focusedText: "focused-text",
   card3D: "card-3d",
   typewriterText: "typewriter-text",
   aiCard: "ai-card",
@@ -64,6 +65,7 @@ export const COMPONENT_ORDER = [
   COMPONENT_IDS.userAvatars,
   COMPONENT_IDS.bubbleText,
   COMPONENT_IDS.glassCard,
+  COMPONENT_IDS.blurHoverText,
   COMPONENT_IDS.aiCard,
   COMPONENT_IDS.sparkleCard,
   COMPONENT_IDS.card3D,
@@ -94,6 +96,40 @@ const CLI_BASE_URL = "https://components-registry.netlify.app/r";
 
 // 3. Raw components data (same as you already have)
 const rawComponentsData: ComponentData[] = [
+  {
+    id: COMPONENT_IDS.blurHoverText,
+    cli: `${CLI_BASE_URL}/${COMPONENT_IDS.blurHoverText}.json`,
+    name: "Blur Hover Text",
+    description: "Text component which reveals the blurry text on hover effect",
+    category: "Text",
+    featured: true,
+    listed: true,
+    dependencies: ["tailwindcss"],
+    new: true,
+    props: [
+      {
+        name: "children",
+        type: "React.ReactNode",
+        required: true,
+        defaultValue: undefined,
+        description: "Content to display inside the hover highlight component",
+      },
+      {
+        name: "className",
+        type: "string",
+        required: false,
+        defaultValue: '""',
+        description: "Additional CSS classes to apply to the container",
+      },
+      {
+        name: "hoverColor",
+        type: "string",
+        required: false,
+        defaultValue: '"bg-blue-500"',
+        description: "Background color class applied on hover",
+      },
+    ],
+  },
   {
     id: COMPONENT_IDS.progressiveHoverCard,
     cli: `${CLI_BASE_URL}/${COMPONENT_IDS.progressiveHoverCard}.json`,

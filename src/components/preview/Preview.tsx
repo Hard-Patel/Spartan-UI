@@ -10,13 +10,14 @@ import { FocusedText } from "../spartan-ui/FocusedText";
 import { HighlightedText } from "../spartan-ui/HighlightedText";
 import { HyperTextToggle } from "../spartan-ui/HyperText";
 import { InteractiveCard } from "../spartan-ui/InteractiveCard";
-import { Marquee } from "../spartan-ui/Marquee";
+import { MarqueeComponent } from "../spartan-ui/Marquee";
 import { MaskedText } from "../spartan-ui/MaskedText";
 import { SlideText } from "../spartan-ui/SlideText";
 import { SparkleCard } from "../spartan-ui/SparkleCard";
 import SuggestiveSearch from "../spartan-ui/SuggestiveSearch";
 import { TypewriterText } from "../spartan-ui/TypewriterText";
 import { VideoMaskedText } from "../spartan-ui/VideoMaskedText";
+import { BlurHoverTextPreview } from "./BlurHoverTextPreview";
 import GlassCardPreview from "./GlassCardPreview";
 import { ParallaxDemo } from "./ParallaxImageDemo";
 import { ProgressiveHoverDemo } from "./ProgressiveHoverDemo";
@@ -71,8 +72,21 @@ export const PreviewComponent = ({
         </div>
       );
 
+    case COMPONENT_IDS.blurHoverText:
+      return <BlurHoverTextPreview isDetailedPage={isDetailedPage} />;
+
     case COMPONENT_IDS.marquee:
-      return <Marquee>Hello</Marquee>;
+      return (
+        <MarqueeComponent>
+          <div className="py-96 flex space-x-20 text-lg font-bold">
+            <div>Hello There</div>
+            <div>Hello There</div>
+            <div>Hello There</div>
+            <div>Hello There</div>
+            <div>Hello There</div>
+          </div>
+        </MarqueeComponent>
+      );
 
     case COMPONENT_IDS.userAvatars:
       return <UserAvatarsPreview isDetailedPage={isDetailedPage} />;

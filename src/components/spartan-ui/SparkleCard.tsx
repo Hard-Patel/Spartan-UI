@@ -24,7 +24,7 @@ function getRandomSparkle(id: number): Sparkle {
 export function SparkleCard({
   children,
   className,
-  sparkles = 15,
+  sparkles = 40,
   duration = 3,
 }: SparkleCardProps) {
   const [dots, setDots] = useState<Sparkle[]>([]);

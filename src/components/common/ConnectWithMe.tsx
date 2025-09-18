@@ -17,7 +17,7 @@ export function ConnectWithMe() {
         aria-label="GitHub"
         className="p-3 bg-muted hover:bg-foreground/10 rounded-full"
       >
-        <Github className="w-5 h-5 text-gray-700" />
+        <Github className="w-5 h-5 text-gray-300" />
       </a>
 
       <a
@@ -27,7 +27,7 @@ export function ConnectWithMe() {
         aria-label="Twitter"
         className="p-3 bg-muted hover:bg-foreground/10 rounded-full"
       >
-        <Twitter className="w-5 h-5 text-blue-500 " />
+        <Twitter className="w-5 h-5 text-blue-400 " />
       </a>
 
       <a
@@ -37,7 +37,7 @@ export function ConnectWithMe() {
         aria-label="LinkedIn"
         className="p-3 bg-muted hover:bg-foreground/10 rounded-full"
       >
-        <Linkedin className="w-5 h-5 text-blue-600 " />
+        <Linkedin className="w-5 h-5 text-blue-600" />
       </a>
 
       <a
