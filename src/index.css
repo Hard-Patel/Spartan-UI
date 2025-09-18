@@ -144,26 +144,6 @@
 }
 
 @layer components {
-  /* Hero section styles */
-  .hero-gradient {
-    background: var(--brand-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .glow-border {
-    @apply relative;
-  }
-
-  .glow-border::before {
-    content: "";
-    @apply absolute inset-0 rounded-[inherit] p-[1px];
-    background: var(--brand-gradient);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-  }
-
   /* Component preview styles */
   .component-card {
     @apply relative overflow-hidden rounded-xl border bg-card transition-all duration-300;
@@ -181,15 +161,6 @@
   .code-block {
     @apply rounded-lg border bg-muted/30 p-4;
     backdrop-filter: blur(8px);
-  }
-
-  /* Smooth animations */
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out;
   }
 
   .animate-glow {
@@ -242,45 +213,6 @@
   to {
     text-shadow: 0 0 30px hsl(262 83% 58% / 0.8);
   }
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-/* Add this demo animation */
-@keyframes vibrate {
-  0% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(-3px);
-  }
-  40% {
-    transform: translateX(3px);
-  }
-  60% {
-    transform: translateX(-3px);
-  }
-  80% {
-    transform: translateX(3px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.scroll-nav-demo-highlight {
-  animation: vibrate 0.4s linear 2; /* vibrates twice */
-}
-
-.animate-marquee {
-  animation: marquee 20s linear infinite;
 }
 
 ::view-transition-old(root),

@@ -9,7 +9,7 @@ export interface ITemplateData {
 // 3. Raw components data (same as you already have)
 export const templates: ITemplateData[] = [
   {
-    id: "1234",
+    id: "1",
     name: "Zuro",
     link: "https://zuro.netlify.app",
     description: "AI Workflow Automation",
