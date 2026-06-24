@@ -2,7 +2,7 @@
 
 🚀 A modern, lightweight UI component library built with **React**, **TailwindCSS**, and **Framer Motion**.
 
-👉 **Live Demo / Docs:** [Spartan UI Library](https://components-hardp.netlify.app/)
+👉 **Live Demo / Docs:** [Spartan UI Library](https://components.hardp.in/)
 
 ---
 
@@ -34,7 +34,7 @@ You can use Spartan UI components in **two ways**:
 
 ### 1. Copy-Paste from Docs
 
-Visit the [Spartan UI Components](https://components-hardp.netlify.app/) site, explore any component, and directly **copy-paste** the JSX + Tailwind code into your project.
+Visit the [Spartan UI Components](https://components.hardp.in/) site, explore any component, and directly **copy-paste** the JSX + Tailwind code into your project.
 
 ### 2. Use CLI to Bring a Component Locally
 
