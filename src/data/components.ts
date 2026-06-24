@@ -92,7 +92,7 @@ export const COMPONENT_ORDER = [
   COMPONENT_IDS.waterReflectedImage,
 ] as const;
 
-const CLI_BASE_URL = "https://components-registry.netlify.app/r";
+const CLI_BASE_URL = "https://registry.hardp.in/r";
 
 // 3. Raw components data (same as you already have)
 const rawComponentsData: ComponentData[] = [
